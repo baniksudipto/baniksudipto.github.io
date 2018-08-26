@@ -1,1 +1,5 @@
-RewriteRule ^$ /me [L,R=301]
+RewriteEngine On
+
+Redirect /game https://baniksudipto.github.io/boxgame/
+
+Redirect / https://baniksudipto.github.io/me/
