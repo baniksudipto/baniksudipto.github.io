@@ -1,0 +1,138 @@
+*{
+    margin: 0;
+    padding:0;
+    border:0;
+    outline: 0;
+    font-family: "Roboto Mono",sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+a{
+    color: #424242;
+}
+body{
+    background-color:#dc5c3eeb;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+#main{
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    padding: 2em 3em;
+}
+@keyframes makevis{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}
+
+
+#term{
+    width: 100%;
+    min-height: 70%;
+    background-color: #fffcdf;
+    -webkit-box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+    overflow: hidden;
+    animation:makevis 0.3s ease-in-out;
+}
+#menu_bar{
+    padding: 0.3em 1em;
+    margin: 0 auto;
+    background-color: rgba(2,2,2,0.8);
+    text-align: left;
+    width: 100%;
+    display: block;
+    height: 1.5em;
+}
+.menu_btn{
+    float: left;
+    display: inline-block;
+    padding: 0.3em;
+    border-radius: 50%;
+    margin: 0.2em;
+    cursor: pointer;
+}
+#term_screen{
+    margin: 0 auto;
+    height: calc(100% - 3em);
+    width: 100%;
+    padding: 1em;
+    font-size: 0.8em;
+    overflow: auto;
+}
+
+.usr{
+    display: inline;
+    color: #E64A19;
+    float: left;
+}
+.usr::before{
+    content: "sudipta";
+     display: inline;
+    color: #E64A19;
+}
+.machine{
+    float: left;
+    display: inline;
+    color: #00796B;
+    margin-right: 5px;
+}
+.machine::before{
+    content:"@baniksudipto.github.io ~ $";
+    display: inline;
+    color: #004D40
+}
+.command{
+    color: #00897B;
+    display: inline;
+    float: left;
+}
+
+.output{
+    display: block;
+    color: #424242;
+}
+@keyframes flicker{
+    0%{
+        opacity: 0.3;
+    }50%{
+        opacity: 1;
+    }100%{
+        opacity: 0.3;
+    }
+}
+@keyframes flicker1{
+    0%{
+        opacity: 0.8;
+    }50%{
+        opacity: 1;
+    }100%{
+        opacity: 0.8;
+    }
+}
+a{
+    animation: flicker1 1.2s infinite;
+}
+#cursor::before{
+    content: "_";
+}
+#cursor{
+    animation: flicker 0.9s infinite;
+}
+
+
+@media(max-width:740px){
+    #main{
+        padding: 2em 1em;
+    }
+}
