@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>jsMove</title>
+        <style>
+        *{padding: 0;border: 0;margin: 0;}
+            body{background-color: #333;font-family: monospace;}
+        #container{height: 100%;width:100%;position: relative;background-color: #544;}
+        #box{    
+			height: 50px;
+			width: 50px;
+			top: 45vh;
+			left: 45vw;
+			position: absolute;
+			background-color: #fff;
+			transition: 0.2s;
+			box-shadow: 0px 0px 4px 4px #eee;
+			border-radius: 1px;
+			text-align:center;
+		}
+		#inst{
+			display: block;
+			padding: 2vw;
+			margin: auto;
+			width: 70vw;
+			color: #d0c8ba9c;
+			user-select:none;
+		}
+        </style>
+    </head>
+    <body>
+    <div id="conntainer">
+		<div id="inst">
+			Simple Box Game<br>
+			---------------
+			<ul> 
+				<li> '+' to increase size</li>
+				<li> '-' to decrease size</li>
+				<li> arrow keys to move </li>
+				<li> mouse pointer to move randomly </li>
+				<li> [ ] to control velocity (<span id='v_meter'>10</span>)</li>
+			
+			</ul>
+		</div>
+		
+	
+        <div id="box">		
+		</div>
+    </div>
+        <script>
+        var currentHeight=window.innerHeight;
+        var currentWidth=window.innerWidth;
+        var velocity=10;//px
+        var box_len = 50;//px
+		var step = 2;
+		var bx = document.getElementById("box");
+        var v_meter = document.getElementById("v_meter");
+		window.onresize = function(){
+			currentHeight=window.innerHeight;
+			currentWidth=window.innerWidth;
+		}
+		
+		
+		document.onclick = function(event){
+			bx.style.left = Math.min( event.clientX , currentWidth - box_len ) +'px';
+			bx.style.top = Math.min( event.clientY , currentHeight - box_len ) +'px';
+		}
+		
+		function update_velocity(){
+			v_meter.innerHTML = velocity.toString();
+		}
+		
+        document.onkeydown = function(e){
+			var boxLeft = bx.offsetLeft;
+			var boxTop = bx.offsetTop;
+			
+			var pressed = parseInt(e.keyCode);
+			
+			/*if(pressed < 37 || pressed > 40){
+				
+			}*/
+			
+			if(pressed === 221){// ] speed ++
+				if(velocity < 40){
+					velocity += step;
+					update_velocity();
+				}
+			}
+			if(pressed === 219){// [ speed --
+				if(velocity > -40){
+					velocity -= step;
+					update_velocity();
+				}
+			}
+			
+			
+			if(pressed === 109){ // minus
+				if(box_len > 5){
+					box_len -= step;
+					bx.style.height = box_len + 'px';
+					bx.style.width = box_len + 'px';
+					bx.style.left = Math.min(bx.offsetLeft,currentWidth-box_len) +'px';
+					bx.style.top = Math.min(bx.offsetTop,currentHeight-box_len) +'px';
+				}
+			}
+			if(pressed === 107){ // plus
+				if(box_len < Math.min(currentHeight,currentWidth)){
+					box_len += step;
+					bx.style.height = box_len + 'px';
+					bx.style.width = box_len + 'px';
+					bx.style.left = Math.min(bx.offsetLeft,currentWidth-box_len) +'px';
+					bx.style.top = Math.min(bx.offsetTop,currentHeight-box_len)+'px';
+				}
+			}
+			
+            switch(pressed){
+				case 37:{  
+						if(boxLeft>=velocity){ // left
+							boxLeft -= velocity;
+							bx.style.left=boxLeft+'px'; 
+						}
+						break;
+					}
+				case 40:{  
+					if(boxTop + velocity + box_len<= currentHeight){ // down
+						boxTop += velocity;
+						bx.style.top=boxTop+'px'; 
+					}
+					break;
+				}
+				case 39:{
+					if(boxLeft + velocity + box_len <= currentWidth){ // right
+						boxLeft += velocity;
+						bx.style.left=boxLeft+'px'; 
+					}
+					break;
+				}
+				case 38:{
+					if(boxTop - velocity >= 0){ // top
+						boxTop -= velocity;
+						bx.style.top=boxTop+'px'; 
+					}
+					break;
+				}
+				
+			};
+			
+		}
+		
+
+        </script>
+    </body>
+</html>
