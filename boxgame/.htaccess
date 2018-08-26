@@ -1,2 +1,1 @@
-Redirect /boxgame http://baniksudipto.github.io/boxgame/
-Redirect http://baniksudipto.github.io/game http://baniksudipto.github.io/boxgame/
+Redirect /game http://baniksudipto.github.io/boxgame/
