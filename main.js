@@ -10,7 +10,7 @@ class Prop{
 var tabs = ['About Me','Contact Me','Education','Interests','Hobbies'];
 
 var data = new Map();
-data['aboutme']  = ['Terms That Go with me',"Competitive Programming","Web Developement","PC Gaming","Geek",'Atheist'];
+data['aboutme']  = ['Terms That Go with me',"Competitive Programming","Web Developement","PC Gaming","Geek"];
 data['education'] = ["UnderGraduate : Jadavpur University ( B.E. in Electrical Engineering') 2015 - 2019 ","High School : Madhyamgram High School (State Board) 2008 - 2015"] ;
 data['contact']   = ['Email Id : sudipta.banik.112@gmail.com', 
                     'Contact Number: +91 9051073567' ,'codechef: sdpt' , 'codeforces: sdpt131',
