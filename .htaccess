@@ -1,1 +1,1 @@
-RedirectMatch ^/$ /me/
+RewriteRule ^$ /me [L,R=301]
