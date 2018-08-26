@@ -1,7 +1,2 @@
 RewriteEngine On
-
-DirectoryIndex /index.html
-
-Redirect /game https://baniksudipto.github.io/boxgame/
-
-Redirect / https://baniksudipto.github.io/me/
+Redirect / https://baniksudipto.github.io/me/index.html
