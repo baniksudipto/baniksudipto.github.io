@@ -43,7 +43,7 @@ v_x.onchange = function(){
 }	
 v_y.onchange = function(){
 	
-	velocity[1] = parseInt(v_y.value0;
+	velocity[1] = parseInt(v_y.value);
 	update_velocity();
 }
 
@@ -129,6 +129,9 @@ window.onresize = function(){
 
 function update_velocity(){
     v_meter.innerHTML = 'x : '+(velocity[0]).toString() + ' y : '+(-1*velocity[1]).toString();
+	
+	
+	
 }
 
 document.onkeydown = function(e){
