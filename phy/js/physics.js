@@ -32,18 +32,18 @@ function updateLeft(left){	bx.style.left = left + 'px';}
 function updateTop(top){	bx.style.top = top + 'px';	}
 
 angle.onchange = function(){
-	let curr_angle = angle.value;
+	let curr_angle = parseInt(angle.value);
 	bx.style.transform = "rotateZ("+curr_angle+"deg)";
 }
 
 v_x.onchange = function(){
 	
-	velocity[0] = v_x.value;
+	velocity[0] = parseInt(v_x.value);
 	update_velocity();
 }	
 v_y.onchange = function(){
 	
-	velocity[1] = v_y.value;
+	velocity[1] = parseInt(v_y.value0;
 	update_velocity();
 }
 
