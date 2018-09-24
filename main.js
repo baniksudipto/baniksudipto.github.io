@@ -15,7 +15,7 @@ data['education'] = ["UnderGraduate : Jadavpur University ( B.E. in Electrical E
 data['contact']   = ['Email Id : sudipta.banik.112@gmail.com', 
                     'Contact Number: +91 9051073567' ,'codechef: sdpt' , 'codeforces: sdpt131',
                     'hackerrank: sdpt_banik','Facebook Profile: sudiptosdpt'];
-data['interests'] = ['Algorithms & Data Structures','Operating Systems','Electronics','Competitive Programming','Knowing How Stuff Works'];
+data['interests'] = ['Algorithms & Data Structures','Web Development','Operating Systems','Electronics','Competitive Programming','Knowing How Stuff Works'];
 data['hobbies'] = ['Unique Notes & Coin Collection','Cycling','Listening to music'];
 
 
