@@ -1,11 +1,9 @@
-//Global Data
-
-class Prop{
+// class Prop{
     
-    constructor(list){
-        this.list = list;
-    }
-}
+//     constructor(list){
+//         this.list = list;
+//     }
+// }
 
 var tabs = ['About Me','Contact Me','Education','Interests','Hobbies'];
 
