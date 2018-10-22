@@ -8,10 +8,10 @@
 var tabs = ['About Me','Contact Me','Education','Interests','Hobbies'];
 
 var data = new Map();
-data['aboutme']  = ['Terms That Go with me',"Competitive Programming","Web Developement","PC Gaming","Geek"];
-data['education'] = ["UnderGraduate : Jadavpur University ( B.E. in Electrical Engineering') 2015 - 2019 ","High School : Madhyamgram High School (State Board) 2008 - 2015"] ;
+data['aboutme']  = ["Competitive Programmer","Web Developer","PC Gamer","Geek"];
+data['education'] = ["Under Graduate : Jadavpur University ( B.E. in Electrical Engineering') 2015 - 2019 ","High School : Madhyamgram High School (State Board) 2008 - 2015"] ;
 data['contact']   = ['Email Id : sudipta.banik.112@gmail.com', 
-                    'Contact Number: +91 9051073567' ,'codechef: <a href="https://www.codechef.com/users/sdpt">sdpt</a>' , 'codeforces: <a href="https://codeforces.com/profile/sdpt131"> sdpt131 </a>',
+                    'Contact Number: +91 9051073567' ,'codechef: <a href="https://www.codechef.com/users/baniksudipto">baniksudipto</a>' , 'codeforces: <a href="https://codeforces.com/profile/sdpt131"> sdpt131 </a>',
                     'hackerrank: <a href="https://www.hackerrank.com/sdpt_banik">sdpt_banik</a>','Facebook Profile: sudiptosdpt'];
 data['interests'] = ['Algorithms & Data Structures','Web Development','Operating Systems','Electronics','Competitive Programming','Knowing How Stuff Works'];
 data['hobbies'] = ['Unique Notes & Coin Collection','Cycling','Listening to music'];
