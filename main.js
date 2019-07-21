@@ -1,22 +1,5 @@
-// class Prop{
-    
-//     constructor(list){
-//         this.list = list;
-//     }
-// }
 
-var tabs = ['About Me','Contact Me','Education','Interests','Hobbies'];
-
-var data = new Map();
-data['aboutme']  = ["Competitive Programmer","Web Developer","PC Gamer","Geek"];
-data['education'] = ["Under Graduate : Jadavpur University ( B.E. in Electrical Engineering') 2015 - 2019 ","High School : Madhyamgram High School (State Board) 2008 - 2015"] ;
-data['contact']   = ['Email Id : sudipta.banik.112@gmail.com', 
-                    'Contact Number: +91 9051073567' ,'codechef: <a href="https://www.codechef.com/users/baniksudipto">baniksudipto</a>' , 'codeforces: <a href="https://codeforces.com/profile/sdpt131"> sdpt131 </a>',
-                    'hackerrank: <a href="https://www.hackerrank.com/sdpt_banik">sdpt_banik</a>','Facebook Profile: sudiptosdpt'];
-data['interests'] = ['Algorithms & Data Structures','Web Development','Operating Systems','Electronics','Competitive Programming','Knowing How Stuff Works'];
-data['hobbies'] = ['Unique Notes & Coin Collection','Cycling','Listening to music'];
-
-
+document.onload = loadJSON('data.json',init);
 
 var options = null;
 var slides = null;
@@ -24,8 +7,33 @@ var data_tabs = null;
 var current_open = 0;
 var slideshow_pop_up_time_lag = 10;//mili sec
 
+function init(data){
+    var keys = [];
+    var values = [];
+    for(var k in data){
+        for(var d in data[k]){
+            keys.push(d)
+            values.push(data[k][d]);
+        }
+    }
+    create_opt_list(keys);
+    create_slideshow(keys,values,show_my_data);
+}
 
-function create_opt_list(){
+function loadJSON(filename , callback_function) {   
+
+    var xobj = new XMLHttpRequest();
+        xobj.overrideMimeType("application/json");
+    xobj.open('GET', filename, true); 
+    xobj.onreadystatechange = function () {
+          if (xobj.readyState == 4 && xobj.status == "200") {
+            callback_function( JSON.parse(xobj.responseText) );
+          }
+    };  
+    xobj.send(null);  
+}
+
+function create_opt_list(tabs){
     var root = document.getElementById("opt_nav_list");
     let n = tabs.length;
     for(let i=0;i<n;i++){
@@ -38,7 +46,7 @@ function create_opt_list(){
     options = document.getElementsByClassName('opt_nav_elem');
 }
 
-function create_slideshow(callback_function){
+function create_slideshow(tabs,values,callback_function){
     var root = document.getElementById("slideshow");
     let n = tabs.length;
     var i = 0;
@@ -63,22 +71,19 @@ function create_slideshow(callback_function){
 
 
     },slideshow_pop_up_time_lag);
+    
     function do_rest(){
         slides = document.getElementsByClassName('tab_window');
         data_tabs = document.getElementsByClassName('data_part');
         current_open = 0;
         slides[current_open].classList.add('shown_window');
         options[current_open].classList.add('active_tab');
-        callback_function();
+        callback_function(values);
     }
 }
 
-function show_my_data(){
-    data_tabs[0].appendChild(render( data['aboutme']));
-    data_tabs[1].appendChild(render( data['contact']));
-    data_tabs[2].appendChild(render( data['education']));
-    data_tabs[3].appendChild(render( data['interests']));
-    data_tabs[4].appendChild(render( data['hobbies']));
+function show_my_data(values){
+    for(let i=0;i<values.length;i++)data_tabs[i].appendChild(render( values[i]));
 }
 
 function render(list){
@@ -102,51 +107,34 @@ function show(e){
     }
 }
 
-function gen_rand(){
-    var n = 10;
-    var text = "";
-    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-    for (var i = 0; i < n; i++)text += possible.charAt(Math.floor(Math.random() * possible.length));
-    return text;
-}
 
-function getCookie(cname) {
-    var name = cname + "=";
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var ca = decodedCookie.split(';');
-    for(var i = 0; i <ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-        }
-    }
-    return "";
-}
 
-function setCookie(){
-    if(getCookie('wasVisited')==""){
-        var random_key = gen_rand();
-        var date = new Date();
-        date.setDate(date.getDate()+30);    
-        document.cookie = "wasVisited=" + random_key.toString()+";expires=" + date.toUTCString()+";path=/";
-    }else{
-        console.log('cookie set');
-    }
-}
+// // function getCookie(cname) {
+// //     var name = cname + "=";
+// //     var decodedCookie = decodeURIComponent(document.cookie);
+// //     var ca = decodedCookie.split(';');
+// //     for(var i = 0; i <ca.length; i++) {
+// //         var c = ca[i];
+// //         while (c.charAt(0) == ' ') {
+// //             c = c.substring(1);
+// //         }
+// //         if (c.indexOf(name) == 0) {
+// //             return c.substring(name.length, c.length);
+// //         }
+// //     }
+// //     return "";
+// // }
 
-function init(){
-    create_opt_list();
-    create_slideshow(show_my_data);
-    
-    setCookie();
-    
-    
-}
-
-document.onload = init();
+// // function setCookie(){
+// //     if(getCookie('wasVisited')==""){
+// //         var random_key = gen_rand();
+// //         var date = new Date();
+// //         date.setDate(date.getDate()+30);    
+// //         document.cookie = "wasVisited=" + random_key.toString()+";expires=" + date.toUTCString()+";path=/";
+// //     }else{
+// //         console.log('cookie set');
+// //     }
+// // }
 
 
 
