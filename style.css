@@ -12,7 +12,10 @@ body{
     height: 100vh;
     width: 100vw;
     overflow: hidden;
-    background-color:#263238;
+    background: #cb2d3e;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #ef473a, #cb2d3e);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #ef473a, #cb2d3e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 ul , li{
     list-style: none;
@@ -23,7 +26,7 @@ ul , li{
     top: 0;
     left: 0;
     width: 100%;
-    background: #1976D2;
+    background: rgba(0,0,0,0.1);
     color: white;
     padding: 10px;
     display: table;
@@ -32,10 +35,12 @@ ul , li{
     position: relative;
     left: 0;
     width: 100%;
-    background: #1E88E5;
+    background:rgba(0,0,0,0.4);
     color: white;
     padding: 10px;
     display: flex;
+    box-shadow: 0px 6px 12px 0px #44444444;
+
 }
 .nav_elem , .opt_nav_elem{
     display:inline-flex;
@@ -51,10 +56,12 @@ ul , li{
 }
 
 .active_tab{
-    border-bottom: 2px solid #1565C0;
+    border-bottom: 1px solid #eee;
+    box-shadow: 0px 6px 12px 0px #44444444;
+
 }
 .nav_elem{
-    background-color: #1565C0;
+    background-color: rgba(0,0,0,0.1);
     border-radius: 2px;
     margin-right: 2px;
 }
@@ -65,15 +72,6 @@ ul , li{
     width: 100%;
 }
 
-.tab_title{
-    width: 100%;
-    padding: 10px;
-    display: block;
-    font-size: 0;
-    background: #1565C0;
-    color:white;
-    /* height: 1.7em; */
-}
 .tab_window{
     width: 10px;    
     height: 77vh;
@@ -82,23 +80,35 @@ ul , li{
     overflow: hidden;
     /* margin-right: 10px; */
     transition: 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
-    box-shadow: 0 0 1px 0 #444;
-    background-color: white;
+    box-shadow: 0 0 5px 0 #44444444;
+    background: #ff7e5f;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #feb47b, #ff7e5f);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #feb47b, #ff7e5f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
     transform: scale(0.97);
     opacity: 0.8;
+}
+.tab_title{
+    width: 100%;
+    padding: 10px;
+    display: block;
+    font-size: 0;
+    color:#555;
+    /* height: 1.7em; */
 }
 .data_part{
     display: none;
     transition: 0ms ease-out 5ms ease-in;
     padding: 10px;
-    background-color:#eee;
     width:100%;
     height: 100%;
 }
 .data_show_li{
     padding: 15px;
     font-size: 1em;
-    border: 1px dashed #1565C0;
+    border: 1px solid #77777711;
+    border-left:1px solid #444;
     display: block;
     margin: 5px auto;
 }

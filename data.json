@@ -1,0 +1,39 @@
+[
+    {
+        "About Me": [
+            "Competitive Programmer",
+            "Web Developer",
+            "PC Gamer",
+            "Geek"
+        ]
+    },
+    {
+        "Education":  [
+            "Under Graduate : Jadavpur University ( B.E. in Electrical Engineering') 2015 - 2019 ",
+            "High School : Madhyamgram High School (State Board) 2008 - 2015"
+        ]
+    },
+    {
+        "Contact": ["Email Id : sudipta.banik.112@gmail.com", 
+            "Contact Number: +91 9051073567" ,"codechef: <a href='https://www.codechef.com/users/baniksudipto'>baniksudipto</a>" , 
+            "Codeforces: <a href='https://codeforces.com/profile/sdpt131'> sdpt131 </a>",
+            "Hackerrank: <a href='https://www.hackerrank.com/sdpt_banik'>sdpt_banik</a>"
+        ]
+    },
+    {
+        "Interesets":[
+            "Algorithms & Data Structures",
+            "Web Development",
+            "Artifical Intelligence",
+            "Electronics",
+            "Competitive Programming"
+        ]
+    },
+    {
+        "Hobbies":[
+            "Unique Notes & Coin Collection",
+            "Cycling",
+            "Listening to music"
+        ]
+    }
+]
