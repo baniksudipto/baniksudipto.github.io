@@ -1,39 +1,47 @@
-[
-    {
-        "About Me": [
-            "Competitive Programmer",
-            "Web Developer",
-            "PC Gamer",
-            "Geek"
-        ]
+{
+  "Intro": "Hi, my name’s Sudipta Banik and I’m a Software Developer. As a Software Developer I have experience of both Backend and Frontend. I have been working at Fourkites Inc. since June 2019.",
+  "Education": {
+    "Under Graduate": {
+      "timeText": "Jadavpur University ( B.E. in Electrical Engineering')",
+      "timeline": "2015 - 2019"
     },
-    {
-        "Education":  [
-            "Under Graduate : Jadavpur University ( B.E. in Electrical Engineering') 2015 - 2019 ",
-            "High School : Madhyamgram High School (State Board) 2008 - 2015"
-        ]
-    },
-    {
-        "Contact": ["Email Id : sudipta.banik.112@gmail.com", 
-            "Contact Number: +91 9051073567" ,"codechef: <a href='https://www.codechef.com/users/baniksudipto'>baniksudipto</a>" , 
-            "Codeforces: <a href='https://codeforces.com/profile/sdpt131'> sdpt131 </a>",
-            "Hackerrank: <a href='https://www.hackerrank.com/sdpt_banik'>sdpt_banik</a>"
-        ]
-    },
-    {
-        "Interests":[
-            "Algorithms & Data Structures",
-            "Web Development",
-            "Artifical Intelligence",
-            "Electronics",
-            "Competitive Programming"
-        ]
-    },
-    {
-        "Hobbies":[
-            "Unique Notes & Coin Collection",
-            "Cycling",
-            "Listening to music"
-        ]
+    "High School": {
+      "timeText": "Madhyamgram High School (State Board)",
+      "timeline": "2008 - 2015"
     }
-]
+  },
+  "Contact": {
+    "linkedin": {
+      "link": "https://www.linkedin.com/in/sudipta-banik-907a68127/",
+      "linkText": "sudipta-banik"
+    },
+    "email id": {
+      "link":"mailto:sudiptabanik112@gmail.com",
+      "linkText": "sudiptabanik112@gmail.com"
+    },
+    "codechef": {
+      "link": "https://www.codechef.com/users/baniksudipto",
+      "linkText": "baniksudipto"
+    },
+    "codeforces": {
+      "link": "https://codeforces.com/profile/sdpt131",
+      "linkText": "sdpt131"
+    },
+    "hackerrank": {
+      "link": "https://www.hackerrank.com/sdpt_banik",
+      "linkText": "sdpt_banik"
+    }
+  },
+  "Interests": [
+    "Algorithms & Data Structures",
+    "Web Development",
+    "Artifical Intelligence",
+    "Electronics",
+    "Competitive Programming"
+  ],
+  "Hobbies": [
+    "Unique Notes & Coin Collection",
+    "Cycling",
+    "Listening to music"
+  ]
+}
