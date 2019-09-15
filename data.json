@@ -1,13 +1,19 @@
 {
   "Intro": "Hi, my name’s Sudipta Banik and I’m a Software Developer. As a Software Developer I have experience of both Backend and Frontend. I have been working at Fourkites Inc. since June 2019.",
+  "Experience": {
+    "Work": {
+      "timeText": "Fourkites Inc. [ Full Stack Developer ] <h5 style='display:inline'> @Chennai,India </h5>",
+      "timeline": "<h4>Jun 2019 to present</h4>"
+    }
+  },
   "Education": {
     "Under Graduate": {
       "timeText": "Jadavpur University ( B.E. in Electrical Engineering')",
-      "timeline": "2015 - 2019"
+      "timeline": "<h4>2015 - 2019</h4>"
     },
     "High School": {
       "timeText": "Madhyamgram High School (State Board)",
-      "timeline": "2008 - 2015"
+      "timeline": "<h4>2008 - 2015</h4>"
     }
   },
   "Contact": {
@@ -16,7 +22,7 @@
       "linkText": "sudipta-banik"
     },
     "email id": {
-      "link":"mailto:sudiptabanik112@gmail.com",
+      "link": "mailto:sudiptabanik112@gmail.com",
       "linkText": "sudiptabanik112@gmail.com"
     },
     "codechef": {
@@ -33,7 +39,7 @@
     }
   },
   "Interests": [
-    "Algorithms & Data Structures",
+    " Algorithms & Data Structures",
     "Web Development",
     "Artifical Intelligence",
     "Electronics",

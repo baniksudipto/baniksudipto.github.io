@@ -11,7 +11,7 @@ function renderRecursive(v) {
         if (v.constructor === String) {
             let sp = document.createElement("span");
             sp.classList.add('treeSpan');
-            sp.innerText = v;
+            sp.innerHTML = v;
             return sp;
         } else if (v.constructor === Object) {
             let dv = document.createElement("div");
@@ -20,14 +20,14 @@ function renderRecursive(v) {
             if ("link" in v) {
                 let link = document.createElement("a");
                 link.classList.add("treeLink");
-                link.innerText = v["linkText"];
+                link.innerHTML = v["linkText"];
                 link.setAttribute("href", v["link"]);
                 dv.appendChild(link);
             } else if ("timeText" in v) {
                 let timeLine = document.createElement("span");
                 timeLine.classList.add("treeSpan");
-                timeLine.innerText = v["timeText"];
-                timeLine.innerText += " ("+ v["timeline"] +")";
+                timeLine.innerHTML = v["timeText"];
+                timeLine.innerHTML +=  v["timeline"] ;
                 dv.appendChild(timeLine);
             } else {
                 Object.entries(v).forEach(([k, v]) => {
