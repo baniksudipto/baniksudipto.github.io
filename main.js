@@ -106,12 +106,15 @@ function render_nav(tabs,hrefs, callback_function, params) {
 
 window.onscroll = function() {optNavStickyToggle()};
 const navbar = document.getElementById("opt_nav");
+const infoRoot = document.getElementById("info_root");
 const sticky = navbar.offsetTop;
 function optNavStickyToggle() {
     if (window.pageYOffset >= sticky) {
-        navbar.classList.add("sticky")
+        navbar.classList.add("sticky");
+		infoRoot.classList.add("moveDown");
     } else {
         navbar.classList.remove("sticky");
+		infoRoot.classList.remove("moveDown");
     }
 }
 

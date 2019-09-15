@@ -39,12 +39,6 @@ ul , li{
     box-sizing: border-box;
 }
 
-@media(max-width: 500px) {
-    .top_nav_split{
-        width: 100%;
-        float: none;
-    }
-}
 
 .top_nav_split  .name{
     font-size: 3em;
@@ -69,6 +63,7 @@ ul , li{
     color: #333333;
     padding: 1% 4%;
     display: flex;
+    overflow-x: auto;
 }
 .sticky {
     position: fixed;
@@ -80,9 +75,10 @@ ul , li{
 #opt_nav > *{
     word-break: keep-all;
     display: inline-flex;
-    padding: 2px 0;
+    padding: 2px 4px;
     cursor: pointer;
     margin-right: 2%;
+    box-sizing: border-box;
 }
 
 .active_tab{
@@ -181,5 +177,26 @@ ul , li{
     display: block;
     padding: 1% 4%;
     font-size: 1.1em;
-    background-color: #dfdfff;;
+    background-color: #dfdfff;
+}
+
+@media(max-width: 500px) {
+    .top_nav_split{
+        width: 100%;
+        float: none;
+    }
+    #opt_nav{
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
+    #opt_nav > *{
+        display: inline-block;
+        text-align: center;
+    }
+    .sticky {
+        position: fixed;
+        top: 90%;
+        height: 10%;
+        box-shadow: 0 -2px 1px 1px rgba(0,0,0,0.2);
+    }
 }
