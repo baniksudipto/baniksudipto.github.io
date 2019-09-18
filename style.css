@@ -64,6 +64,16 @@ ul , li{
     padding: 1% 4%;
     display: flex;
     overflow-x: auto;
+    transition: 0.2s ease-in;
+    /* animation: fadeIn 0.2s ease-in 0.05s 1; */
+}
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }to{
+        opacity: 1;
+    }
+    
 }
 .sticky {
     position: fixed;
