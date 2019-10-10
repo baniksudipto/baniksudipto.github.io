@@ -22,7 +22,11 @@ function renderRecursive(v) {
                 link.classList.add("treeLink");
                 link.innerHTML = v["linkText"];
                 link.setAttribute("href", v["link"]);
+                link.setAttribute("target","_blank");
+                let icon = document.createElement("i");
+                icon.classList.add("fas","fa-external-link-alt");
                 dv.appendChild(link);
+                dv.appendChild(icon);
             } else if ("timeText" in v) {
                 let timeLine = document.createElement("span");
                 timeLine.classList.add("treeSpan");
@@ -60,9 +64,12 @@ function render_info(data) {
         sectionTitle.classList.add("sectionTitle");
         sectionTitle.setAttribute("id",k);
         sectionTitle.innerText = k;
+        let sectionData = document.createElement("div");
+        sectionData.classList.add("sectionData");
         if (domTree !== undefined) {
             info_root.appendChild(sectionTitle);
-            info_root.appendChild(domTree);
+            sectionData.appendChild(domTree);
+            info_root.appendChild(sectionData);
         }
     });
 }
@@ -104,71 +111,6 @@ function render_nav(tabs,hrefs, callback_function, params) {
 }
 
 
-window.onscroll = function() {optNavStickyToggle()};
-const navbar = document.getElementById("opt_nav");
-const infoRoot = document.getElementById("info_root");
-const sticky = navbar.offsetTop;
-function optNavStickyToggle() {
-    if (window.pageYOffset >= sticky) {
-        navbar.classList.add("sticky");
-		infoRoot.classList.add("moveDown");
-    } else {
-        navbar.classList.remove("sticky");
-		infoRoot.classList.remove("moveDown");
-    }
-}
-
-// function render_info(tabs,values,callback_function){
-//     var root = document.getElementById("slideshow");
-//     let n = tabs.length;
-//     var i = 0;
-//     // root.style.width = (window.innerWidth * n )+'px';
-//     var handle = setInterval(function(){
-
-//         var tab_window = document.createElement('div');
-//         var tab_title = document.createElement('span');
-//         var data_part = document.createElement('div');
-//         data_part.classList.add('data_part');
-//         tab_title.innerHTML = tabs[i];
-//         tab_title.setAttribute('class','tab_title');
-//         tab_window.classList.add('tab_window');
-//         tab_window.appendChild(tab_title);
-//         tab_window.appendChild(data_part);
-//         root.appendChild(tab_window);
-
-//         if(++i == n){
-//             clearInterval(handle);
-//             do_rest();
-//         }
-
-
-//     },slideshow_pop_up_time_lag);
-
-//     function do_rest(){
-//         slides = document.getElementsByClassName('tab_window');
-//         data_tabs = document.getElementsByClassName('data_part');
-//         current_open = 0;
-//         slides[current_open].classList.add('shown_window');
-//         options[current_open].classList.add('active_tab');
-//         callback_function(values);
-//     }
-// }
-
-// function show_my_data(values){
-//     for(let i=0;i<values.length;i++)data_tabs[i].appendChild(render( values[i]));
-// }
-
-// function render(list){
-//     var ul = document.createElement('ul');
-//     for(var i=0;i< list.length;i++){
-//         var li = document.createElement('li');
-//         li.classList.add('data_show_li');
-//         li.innerHTML = list[i].trim().toString();
-//         ul.appendChild(li);
-//     }
-//     return ul;
-// }
-
 function show(e) {
     if (current_open && current_open === e) return; // clicked on same tab
     if (current_open !== undefined) {
@@ -177,34 +119,6 @@ function show(e) {
     current_open = e;
     options[e].classList.add('active_tab');
 }
-
-
-// // function getCookie(cname) {
-// //     var name = cname + "=";
-// //     var decodedCookie = decodeURIComponent(document.cookie);
-// //     var ca = decodedCookie.split(';');
-// //     for(var i = 0; i <ca.length; i++) {
-// //         var c = ca[i];
-// //         while (c.charAt(0) == ' ') {
-// //             c = c.substring(1);
-// //         }
-// //         if (c.indexOf(name) == 0) {
-// //             return c.substring(name.length, c.length);
-// //         }
-// //     }
-// //     return "";
-// // }
-
-// // function setCookie(){
-// //     if(getCookie('wasVisited')==""){
-// //         var random_key = gen_rand();
-// //         var date = new Date();
-// //         date.setDate(date.getDate()+30);    
-// //         document.cookie = "wasVisited=" + random_key.toString()+";expires=" + date.toUTCString()+";path=/";
-// //     }else{
-// //         console.log('cookie set');
-// //     }
-// // }
 
 
 

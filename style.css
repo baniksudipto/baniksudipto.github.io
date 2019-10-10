@@ -65,22 +65,13 @@ ul , li{
     display: flex;
     overflow-x: auto;
     transition: 0.2s ease-in;
-    /* animation: fadeIn 0.2s ease-in 0.05s 1; */
+    position: sticky;
+    top:0;
+    background-color: #ffffff;
+    box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.1);
+    min-height: 40px;
 }
-@keyframes fadeIn{
-    from{
-        opacity: 0;
-    }to{
-        opacity: 1;
-    }
-    
-}
-.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: #dfdfff;
-}
+
 
 #opt_nav > *{
     word-break: keep-all;
@@ -101,68 +92,6 @@ ul , li{
     border-radius: 2px;
     margin-right: 2px;
 }
-/*#slideshow{*/
-/*    padding: 10px;*/
-/*    position: relative;*/
-/*    display: block;*/
-/*    width: 100%;*/
-/*}*/
-
-/*.tab_window{*/
-/*    width: 10px;    */
-/*    height: 77vh;*/
-/*    display: inline-block;*/
-/*    !* border:1px dotted black; *!*/
-/*    overflow: hidden;*/
-/*    !* margin-right: 10px; *!*/
-/*    transition: 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);*/
-/*    opacity: 0;*/
-/*}*/
-/*.tab_title{*/
-/*    width: 100%;*/
-/*    padding: 10px;*/
-/*    display: block;*/
-/*    font-size: 0;*/
-/*    color:#555;*/
-/*    !* height: 1.7em; *!*/
-/*}*/
-/*.data_part{*/
-/*    display: none;*/
-/*    transition: 0ms ease-out 5ms ease-in;*/
-/*    padding: 10px;*/
-/*    width:100%;*/
-/*    height: 100%;*/
-/*}*/
-/*.data_show_li{*/
-/*    padding: 15px;*/
-/*    font-size: 1em;*/
-/*    border: 1px solid #77777711;*/
-/*    border-left:1px solid #444;*/
-/*    display: block;*/
-/*    margin: 5px auto;*/
-/*}*/
-
-
-/*.shown_window{*/
-/*    opacity: 1;*/
-/*    width: calc(100vw - 60px) !important;*/
-/*}*/
-/*.shown_window > .tab_title{*/
-/*    font-size: 1em;*/
-/*}*/
-/*.shown_window > .data_part{*/
-/*    display: block;*/
-/*}*/
-
-
-
-/*.hidden{*/
-/*    width:0 !important;*/
-/*    height: 0 !important;*/
-/*    display: none;*/
-/*    opacity: 0;*/
-/*}*/
-
 
 /* recursive json data css */
 
@@ -188,8 +117,12 @@ ul , li{
     padding: 1% 4%;
     font-size: 1.1em;
     background-color: #dfdfff;
+    position: sticky;
+    top:40px;
 }
-
+.sectionData{
+    min-height: 10vh;
+}
 @media(max-width: 500px) {
     .top_nav_split{
         width: 100%;
@@ -202,11 +135,5 @@ ul , li{
     #opt_nav > *{
         display: inline-block;
         text-align: center;
-    }
-    .sticky {
-        position: fixed;
-        top: 90%;
-        height: 10%;
-        box-shadow: 0 -2px 1px 1px rgba(0,0,0,0.2);
     }
 }
