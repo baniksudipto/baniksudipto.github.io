@@ -30,8 +30,7 @@ function renderRecursive(v) {
             } else if ("timeText" in v) {
                 let timeLine = document.createElement("span");
                 timeLine.classList.add("treeSpan");
-                timeLine.innerHTML = v["timeText"];
-                timeLine.innerHTML +=  v["timeline"] ;
+                timeLine.innerHTML = v["timeText"] + v["timeline"] ;
                 dv.appendChild(timeLine);
             } else {
                 Object.entries(v).forEach(([k, v]) => {
@@ -75,11 +74,7 @@ function render_info(data) {
 }
 
 function init(data) {
-    let keys = [];
-    for (let k in data) {
-        keys.push(k);
-    }
-    render_nav(keys,Object.keys(data), show, 0);
+    render_nav(Object.keys(data), show, 0);
     render_info(data);
 }
 
@@ -96,14 +91,14 @@ function loadJSON(filename, callback_function) {
     xobj.send(null);
 }
 
-function render_nav(tabs,hrefs, callback_function, params) {
+function render_nav(tabs, callback_function, params) {
     let root = document.getElementById("opt_nav");
     for (let i = 0, n = tabs.length; i < n; i++) {
         let x = document.createElement('a');
         x.innerHTML = tabs[i];
         x.setAttribute('class', 'opt_nav_elem');
         x.setAttribute('onclick', 'show(' + i + ')');
-        x.setAttribute('href', "#"+hrefs[i]);
+        x.setAttribute('href', "#"+tabs[i]);
         root.appendChild(x);
     }
     options = document.getElementsByClassName('opt_nav_elem');
