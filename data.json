@@ -1,8 +1,8 @@
 {
-  "Intro": "Hi, my name’s Sudipta Banik and I’m a Software Developer. As a Software Developer I have experience of both Backend and Frontend. I have been working at Fourkites Inc. since June 2019.",
+  "Intro": "Hi, my name is Sudipta Banik and I've been working as Software Engineer at Fourkites for two+ years with microservices architecture. I am self taught developer and passionate about problem solving.",
   "Experience": {
     "Work": {
-      "timeText": "Fourkites Inc. [ Full Stack Developer ] <h5 style='display:inline'> @Chennai,India </h5>",
+      "timeText": "Fourkites Inc. [ Software Engineer ] <h5 style='display:inline'> @Chennai,India </h5>",
       "timeline": "<h4>Jun 2019 to present</h4>"
     }
   },
@@ -18,7 +18,7 @@
   },
   "Contact": {
     "linkedin": {
-      "link": "https://www.linkedin.com/in/sudipta-banik-907a68127/",
+      "link": "https://www.linkedin.com/in/sudipta-banik/",
       "linkText": "sudipta-banik"
     },
     "email id": {
@@ -40,14 +40,12 @@
   },
   "Interests": [
     "Algorithms & Data Structures",
+    "Competitive Programming",
     "Web Development",
-    "Artifical Intelligence",
-    "Electronics",
-    "Competitive Programming"
+    "Software Design Patterns",
+    "Linux"
   ],
   "Hobbies": [
-    "Unique Notes & Coin Collection",
-    "Cycling",
-    "Listening to music"
+    "Music & Instruments" , "Astronomy" , "Travelling" , "Coin Collection"
   ]
 }
