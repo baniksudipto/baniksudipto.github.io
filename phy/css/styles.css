@@ -1,79 +1,36 @@
-*{padding: 0;border: 0;margin: 0;}
-button{
-	padding:5px;box-shadow:0 0 3px #444;margin:5px;
-	background-color:#343434;
-	color:white;
-	cursor:pointer;
-}
-html{
-    background-color: #01579B;
-}
+*{box-sizing:border-box;margin:0;padding:0}
+#root, html,body{height:100%}
 body{
-    font-family: monospace;
-    box-shadow: 0 0 2px 2px #80CBC4;
-    height: 100vh !important;
-    width: 100vw;
+  font-family: 'Roboto', ui-sans-serif, system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial;
+  background: linear-gradient(180deg,#f8fbff 0%, #eef6fb 100%);
+  color:#0b2a3a;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
 }
-#container{
-    height: 100%;
-    width:100%;
-    position: fixed;
-    z-index: 0;
-    top:0;
-    left: 0;
-    background-color: #004D40;
-}
-#box{    
-    
-    cursor:pointer;
-    top: 45vh;
-    left: 45vw;
-    box-sizing: border-box;
-    padding: 7px;
-    position: fixed;
-    z-index: 10;
-    background-color: #B3E5FC;
-    transition: 0.2s;
-    box-shadow: 0 0 2px 2px #999;
-    text-align:center;
-	border-radius:5px;
-}
-#inst{
-    display: block;
-    padding: 2vw;
-    margin: auto;
-    width: 70vw;
-    color: #80CBC4;
-    user-select:none;
+#leftPanel{position:fixed;left:0;top:0;bottom:0;width:300px;z-index:20;padding:18px;height:100vh;overflow:auto}
+#playfield{
+  position:fixed;top:0;right:0;bottom:0;left:300px;display:block;z-index:0;background:linear-gradient(180deg,#f6fbff, #f0f8ff);width:calc(100% - 300px);height:100vh;
 }
 
-
-.slider {
-    -webkit-appearance: none;
-    width: 30%;
-    height: 5px;
-    border-radius: 5px;   
-    background: #d3d3d3;
-    outline: none;
-    opacity: 0.7;
-    -webkit-transition: .2s;
-    transition: opacity .2s;
+.controls{
+  background:rgba(255,255,255,0.95);
+  padding:12px;border-radius:10px;box-shadow:0 8px 28px rgba(12,36,56,0.08);min-width:260px;border:1px solid rgba(11,42,58,0.06)
 }
+.controls .row{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.controls label{flex:1;font-size:13px;color:#123445}
+button{padding:8px 12px;border-radius:8px;border:0;background:linear-gradient(180deg,#4aa3ff,#2b86e6);color:white;cursor:pointer;box-shadow:0 6px 18px rgba(43,83,128,0.12)}
+.note{font-size:12px;color:#325a6b;margin-top:6px}
+.slider{width:100%;height:6px;border-radius:999px;background:linear-gradient(90deg,#d8eaf8,#eaf7f6);outline:none;border:1px solid rgba(11,42,58,0.04)}
+.controls input[type=range]{-webkit-appearance:none}
+.controls input[type=range]::-webkit-slider-thumb{width:14px;height:14px;border-radius:50%;background:#0b2a3a;box-shadow:0 2px 6px rgba(11,42,58,0.12)}
+#info,#speed{font-weight:600;color:#0b2a3a}
 
-.slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%; 
-    background: rgb(76, 119, 175);
-    cursor: pointer;
-}
+#scoreBoard{font-weight:700;color:#0b2a3a}
+#multiplier,#highScore{font-weight:700;color:#0b2a3a}
+.particle{position:absolute;pointer-events:none}
 
-.slider::-moz-range-thumb {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: rgb(147, 76, 175);
-    cursor: pointer;
+@media (max-width:880px){
+  .controls{min-width:unset;width:88vw}
+  #leftPanel{width:84vw;left:6px;right:6px;top:6px;height:auto;border-radius:10px}
+  #playfield{left:0;top:calc(6px + 220px);right:6px;bottom:6px;height:calc(100vh - (6px + 220px));width:auto}
 }
