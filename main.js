@@ -65,10 +65,40 @@ function render_info(data) {
         sectionTitle.innerText = k;
         let sectionData = document.createElement("div");
         sectionData.classList.add("sectionData");
+        // add a section-specific class for targeted styling
+        sectionData.classList.add(`section--${k.toLowerCase().replace(/\s+/g,'-')}`);
+        sectionData.setAttribute('data-section', k);
         if (domTree !== undefined) {
             info_root.appendChild(sectionTitle);
             sectionData.appendChild(domTree);
             info_root.appendChild(sectionData);
+
+            // Post-process Roles to group each company (header + content) in a '.company' container
+            if (k === 'Roles') {
+                // domTree is the first child of sectionData
+                let root = sectionData.children[0];
+                if (root) {
+                    let children = Array.from(root.childNodes);
+                    let frag = document.createDocumentFragment();
+                    for (let i = 0; i < children.length; i++) {
+                        let node = children[i];
+                        if (node.nodeName.toLowerCase() === 'h4') {
+                            let companyName = node.innerText;
+                            let companyDiv = document.createElement('div');
+                            companyDiv.classList.add('company');
+                            companyDiv.setAttribute('data-company', companyName);
+                            companyDiv.appendChild(node);
+                            if (children[i + 1]) {
+                                companyDiv.appendChild(children[i + 1]);
+                                i++; // skip the next node
+                            }
+                            frag.appendChild(companyDiv);
+                        }
+                    }
+                    sectionData.innerHTML = '';
+                    sectionData.appendChild(frag);
+                }
+            }
         }
     });
 }
