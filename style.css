@@ -39,7 +39,32 @@ h3{font-size:1.25rem;margin:0 0 .5rem}
 .nav-toggle{display:none;background:none;border:0;font-size:20px}
 
 /* Hero */
-.hero{background:linear-gradient(180deg,#f7fbff, #ffffff);padding:80px 0}
+.hero{
+  position:relative;
+  padding:120px 0;
+  overflow:hidden;
+  background: linear-gradient(180deg, rgba(247,251,255,0.6), rgba(255,255,255,0.95));
+}
+.hero-bg{
+  position:absolute;
+  inset:0;
+  background-image: url('img/me.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.4; /* subtle */
+  transform: translateY(0);
+  will-change: transform;
+  z-index: 0;
+}
+
+.hero::after{
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.0), rgba(255,255,255,0.9));
+  z-index: 1;
+}
+.hero .container{position:relative;z-index:2}
 .hero .name-highlight{color:var(--accent);font-weight:700}
 .lead{color:var(--muted);max-width:760px}
 .btn{display:inline-block;background:var(--accent);color:#fff;padding:10px 16px;border-radius:8px;text-decoration:none}
@@ -49,6 +74,26 @@ h3{font-size:1.25rem;margin:0 0 .5rem}
 .resume-menu{position:absolute;right:20px;top:84px;background:#fff;border:1px solid #eee;border-radius:8px;padding:8px;box-shadow:0 8px 24px rgba(2,6,23,0.07);display:flex;flex-direction:column;gap:8px;z-index:1000}
 .resume-menu.hidden{display:none}
 .hero .hero-actions{position:relative;display:inline-block}
+
+/* Underlined download link style inside resume menu */
+.resume-menu a.link-download{
+  background: transparent;
+  border: 0;
+  padding: 0;
+  color: var(--accent);
+  text-decoration: underline;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-block;
+}
+.resume-menu a.link-download:hover,
+.resume-menu a.link-download:focus{
+  text-decoration: none;
+  background: rgba(11,116,217,0.06);
+  border-radius: 4px;
+  padding: 2px 6px;
+  outline: none;
+}
 
 /* Block items (work & education) */
 .block_item {
@@ -80,9 +125,14 @@ h3{font-size:1.25rem;margin:0 0 .5rem}
 /* Box shadow and visual details are handled by `.block_item` */
 
 /* Footer */
-.site-footer{border-top:1px solid #eee;padding:18px 0;margin-top:40px}
-.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:16px}
+.site-footer{margin-top:40px}
+.footer-banner{width:100%;height:400px;object-fit:cover;display:block;border-top:1px solid #eee;border-bottom:1px solid #eee}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 0}
 .footer-links a{color:var(--muted);text-decoration:none}
+@media (max-width:520px){
+  .footer-banner{height:100px}
+  .footer-inner{gap:10px;padding:12px 0}
+}
 
 /* Responsive */
 @media (max-width:900px){
@@ -94,6 +144,12 @@ h3{font-size:1.25rem;margin:0 0 .5rem}
 @media (max-width:520px){
   .hero{padding:40px 0}
   .container{padding:20px}
+}
+
+/* Disable parallax on small screens */
+@media (max-width:699px){
+  .hero-bg{transform:none !important;opacity:0.18}
+  .hero{padding:90px 0}
 }
 
 /* Make all main sections equal width and centered */

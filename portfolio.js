@@ -93,16 +93,76 @@
     // Close menu after selecting an item
     resumeMenu && resumeMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setResumeOpen(false)));
 
-    // Ensure the download link reliably opens the PDF (some browsers ignore download attribute when in same-origin popups).
+    // Ensure the download link reliably downloads the PDF. We'll fetch the PDF and create a blob download.
     const downloadLink = document.getElementById('download-resume');
-    if(downloadLink){
-      downloadLink.addEventListener('click', function(e){
+    if (downloadLink) {
+      downloadLink.addEventListener('click', async function (e) {
         e.preventDefault();
-        // Open in new tab to force browser to show or download the PDF
-        window.open(this.href, '_blank', 'noopener');
-        setResumeOpen(false);
+        const href = this.getAttribute('href');
+        const originalText = this.textContent;
+        // provide simple feedback
+        try {
+          this.textContent = 'Downloading…';
+          const resp = await fetch(href, { method: 'GET' });
+          if (resp && resp.ok) {
+            const blob = await resp.blob();
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'Sudipta-Banik-Resume.pdf';
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+            URL.revokeObjectURL(url);
+          } else {
+            throw new Error('Fetch failed');
+          }
+        } catch (err) {
+          // fallback 1: try a programmatic anchor with download attribute
+          try {
+            const a2 = document.createElement('a');
+            a2.href = href;
+            a2.setAttribute('download', 'Sudipta-Banik-Resume.pdf');
+            document.body.appendChild(a2);
+            a2.click();
+            a2.remove();
+          } catch (err2) {
+            // final fallback: open in new tab
+            window.open(href, '_blank', 'noopener');
+          }
+        } finally {
+          this.textContent = originalText;
+          setResumeOpen(false);
+        }
       });
     }
+
+    // Parallax background for hero (desktop only)
+    (function(){
+      const hero = document.querySelector('.hero');
+      const heroBg = hero && hero.querySelector('.hero-bg');
+      if(!heroBg) return;
+      const enabled = window.matchMedia('(pointer:fine) and (min-width:700px)').matches;
+      if(!enabled){
+        heroBg.style.transform = 'translateY(0)';
+        return;
+      }
+      let ticking = false;
+      function onScroll(){
+        if(ticking) return;
+        ticking = true;
+        requestAnimationFrame(() => {
+          const rect = hero.getBoundingClientRect();
+          const offset = Math.round(-rect.top * 0.3); // parallax factor
+          heroBg.style.transform = `translateY(${offset}px)`;
+          ticking = false;
+        });
+      }
+      window.addEventListener('scroll', onScroll, {passive:true});
+      window.addEventListener('resize', onScroll);
+      // init position
+      onScroll();
+    })();
 
   });
 })();
