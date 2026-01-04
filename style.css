@@ -34,7 +34,8 @@ h3{font-size:1.25rem;margin:0 0 .5rem}
 .brand{font-weight:700;font-size:1.05rem}
 .main-nav{display:flex;gap:18px;align-items:center}
 .main-nav a{color:var(--muted);text-decoration:none;font-weight:500}
-.main-nav a.cta{background:var(--accent);color:#fff;padding:8px 12px;border-radius:6px}
+.main-nav a.cta, .main-nav .cta{background:var(--accent);color:#fff;padding:8px 12px;border-radius:6px;border:0;text-decoration:none;cursor:pointer}
+.main-nav .cta{font-weight:600}
 .nav-toggle{display:none;background:none;border:0;font-size:20px}
 
 /* Hero */
@@ -42,6 +43,24 @@ h3{font-size:1.25rem;margin:0 0 .5rem}
 .hero .name-highlight{color:var(--accent);font-weight:700}
 .lead{color:var(--muted);max-width:760px}
 .btn{display:inline-block;background:var(--accent);color:#fff;padding:10px 16px;border-radius:8px;text-decoration:none}
+.btn-ghost{display:inline-block;background:transparent;color:var(--accent);border:1px solid rgba(11,116,217,0.12);padding:8px 12px;border-radius:8px;text-decoration:none}
+
+/* Resume menu */
+.resume-menu{position:absolute;right:20px;top:84px;background:#fff;border:1px solid #eee;border-radius:8px;padding:8px;box-shadow:0 8px 24px rgba(2,6,23,0.07);display:flex;flex-direction:column;gap:8px;z-index:1000}
+.resume-menu.hidden{display:none}
+.hero .hero-actions{position:relative;display:inline-block}
+
+/* Block items (work & education) */
+.block_item {
+  padding: 20px;
+  margin: 0 0 10px 0; /* 10px margin after each block */
+  border-radius: 8px;
+  color: #fff;
+  text-align: left;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.04);
+}
+.block_item h3{margin-top:0;margin-bottom:6px;color:inherit}
+.block_item .role-meta, .block_item .edu-meta{opacity:0.9;margin-bottom:8px;color:inherit} 
 
 /* Light sections (About, Skills) */
 .section-light{background:var(--bg-light);border-radius:10px;margin:24px 0;padding:24px}
@@ -53,24 +72,12 @@ h3{font-size:1.25rem;margin:0 0 .5rem}
 .skill-bar{background:#eef2ff;height:10px;border-radius:999px;overflow:hidden}
 .skill-fill{height:100%;background:linear-gradient(90deg,var(--accent),#2e8bf8);width:0}
 
-/* Roles */
-.roles .company-list{display:flex;flex-direction:column;gap:12px;margin-top:12px}
-.company{padding:18px;border-radius:8px;max-width:900px;margin:0 auto}
-.company h3{margin:0 0 6px}
-.company ul{margin-top:8px;padding-left:18px;color:rgba(255,255,255,0.95)}
-.company-uber{color:white;background:var(--uber)}
-.company-grab{color:white;background:var(--grab)}
-.company-fourkites{color:white;background:var(--fourkites)}
+.block_item.uber{background:var(--uber);color:#fff}
+.block_item.grab{background:var(--grab);color:#fff}
+.block_item.fourkites{background:var(--fourkites);color:#fff}
+.block_item.jadavpur{background:var(--saffron);color:#111}
 
-/* Education */
-.education{padding:18px;border-radius:8px;max-width:900px;margin:0 auto}
-.edu-card{background:var(--saffron);color:#fff;padding:18px;border-radius:8px;margin:0 auto}
-.edu-card h3{margin:0 0 6px;font-weight:700}
-.edu-meta{opacity:0.95;margin-bottom:8px}
-.edu-highlights{margin-left:18px;padding-left:0}
-
-/* Ensure consistent sizing with .company boxes */
-.company, .edu-card{box-shadow:0 1px 0 rgba(0,0,0,0.05)}
+/* Box shadow and visual details are handled by `.block_item` */
 
 /* Footer */
 .site-footer{border-top:1px solid #eee;padding:18px 0;margin-top:40px}
@@ -111,15 +118,14 @@ main .container {
 .education .edu-inner{display:flex;justify-content:center;gap:20px}
 .edu-item{text-align:center}
 
-/* Ensure all section boxes have the same width and are centered */
-.section-light, .company, .education {
+/* Ensure main sections have the same width and are centered */
+.section-light, .education {
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
   border-radius: 10px;
 }
 .section-light{padding:24px}
-.company{padding:18px}
 .education{padding:20px}
 
 /* Full-bleed sections */
@@ -135,22 +141,14 @@ main .container {
 }
 .section-full .container{padding-left:16px;padding-right:16px}
 
-.company, .edu-card{
-  min-height: 400px;
-  display: flex;
-  align-items: center;
-}
-.company .content, .edu-card .content{width:100%;}
-
-/* text alignment per section */
-.company .content, .edu-card .content{ text-align:left; }
+/* Removed legacy .company/.edu-card content layout — `.block_item` elements contain left-aligned content */
 .about .content, .skills .content{ text-align:center; }
 
 /* Skill chips */
 .skill-chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:12px}
 .skill-chip{display:inline-block;background:#fff;color:#111;padding:8px 12px;border-radius:999px;border:1px solid #eee;font-weight:600}
 
-.company-section{margin-bottom:18px}
+/* company-section removed in favor of .block_item spacing */
 
 /* Utility */
 .hidden{display:none !important}

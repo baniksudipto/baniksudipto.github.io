@@ -73,7 +73,7 @@ function render_info(data) {
             sectionData.appendChild(domTree);
             info_root.appendChild(sectionData);
 
-            // Post-process Roles to group each company (header + content) in a '.company' container
+            // Post-process Roles to group each company (header + content) in a '.block_item' entry
             if (k === 'Roles') {
                 // domTree is the first child of sectionData
                 let root = sectionData.children[0];
@@ -85,7 +85,12 @@ function render_info(data) {
                         if (node.nodeName.toLowerCase() === 'h4') {
                             let companyName = node.innerText;
                             let companyDiv = document.createElement('div');
-                            companyDiv.classList.add('company');
+                            companyDiv.classList.add('block_item');
+                            // add company-specific variant class when recognizable
+                            const nm = companyName.toLowerCase();
+                            if(nm.includes('uber')) companyDiv.classList.add('uber');
+                            else if(nm.includes('grab')) companyDiv.classList.add('grab');
+                            else if(nm.includes('fourkites')) companyDiv.classList.add('fourkites');
                             companyDiv.setAttribute('data-company', companyName);
                             companyDiv.appendChild(node);
                             if (children[i + 1]) {

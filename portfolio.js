@@ -51,5 +51,58 @@
         link && link.classList.add('active');
       }
     });
+
+    // Resume menu toggle (header + hero buttons)
+    const resumeMenu = document.querySelector('.resume-menu');
+    const resumeButtons = Array.from(document.querySelectorAll('.resume-cta'));
+    function setResumeOpen(open){
+      if(!resumeMenu) return;
+      resumeMenu.classList.toggle('hidden', !open);
+      resumeButtons.forEach(b => b.setAttribute('aria-expanded', open ? 'true' : 'false'));
+      if(open){
+        // focus first menu item
+        const first = resumeMenu.querySelector('a');
+        first && first.focus();
+      }
+    }
+    resumeButtons.forEach(btn => {
+      btn.addEventListener('click', function(e){
+        e.preventDefault();
+        // If header button clicked, scroll to hero first
+        const hero = document.querySelector('.hero');
+        if(hero && !document.body.contains(resumeMenu)){
+          // nothing
+        }
+        setResumeOpen(!resumeMenu.classList.contains('hidden'));
+      });
+    });
+
+    // Close on click outside
+    document.addEventListener('click', function(e){
+      if(!resumeMenu || resumeMenu.classList.contains('hidden')) return;
+      if(!e.target.closest('.resume-menu') && !e.target.closest('.resume-cta')){
+        setResumeOpen(false);
+      }
+    });
+
+    // Close on Escape
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape') setResumeOpen(false);
+    });
+
+    // Close menu after selecting an item
+    resumeMenu && resumeMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setResumeOpen(false)));
+
+    // Ensure the download link reliably opens the PDF (some browsers ignore download attribute when in same-origin popups).
+    const downloadLink = document.getElementById('download-resume');
+    if(downloadLink){
+      downloadLink.addEventListener('click', function(e){
+        e.preventDefault();
+        // Open in new tab to force browser to show or download the PDF
+        window.open(this.href, '_blank', 'noopener');
+        setResumeOpen(false);
+      });
+    }
+
   });
 })();

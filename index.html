@@ -17,11 +17,8 @@
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#work">Work</a>
-        <a href="#uber">Uber</a>
-        <a href="#grab">Grab</a>
-        <a href="#fourkites">Fourkites</a>
         <a href="#education">Education</a>
-        <a href="resume.html" target="_blank" class="cta">Resume</a>
+        <button class="cta resume-cta" aria-haspopup="true" aria-expanded="false">Resume ▾</button>
       </nav>
       <button class="nav-toggle" aria-label="Open navigation">☰</button>
     </div>
@@ -31,112 +28,114 @@
     <section class="hero">
       <div class="container">
         <h1>Hi, I'm <span class="name-highlight">Sudipta Banik</span></h1>
-        <p class="lead">Software Engineer focused on microservices and distributed systems. I build scalable backends and enjoy solving hard problems.</p>
-		<p class="content">I'm a self-taught developer and a problem-solver, working with microservices, cloud-native infrastructure, and distributed systems. I enjoy designing reliable services and working in a team.</p>
-        <p class="hero-actions"><a class="btn" href="resume.html" target="_blank">Download Resume</a></p>
-      </div>
-    </section>
-
-    <section id="skills" class="skills section-light section-full">
-      <div class="container">
-        <div class="content">
-          <h2>Skills</h2>
-          <div class="skills-grid">
-            <div class="skill-chips">
-              <span class="skill-chip">Go</span>
-              <span class="skill-chip">Java</span>
-              <span class="skill-chip">SQL</span>
-              <span class="skill-chip">C++</span>
-              <span class="skill-chip">Python</span>
-              <span class="skill-chip">Kubernetes</span>
-              <span class="skill-chip">Apache YARN</span>
-              <span class="skill-chip">Docker</span>
-              <span class="skill-chip">AWS</span>
-              <span class="skill-chip">GCP</span>
-              <span class="skill-chip">Kafka</span>
-              <span class="skill-chip">Redis</span>
-              <span class="skill-chip">PostgreSQL</span>
-              <span class="skill-chip">MySQL</span>
-              <span class="skill-chip">Aerospike</span>
-              <span class="skill-chip">ElasticSearch</span>
-              <span class="skill-chip">Spring Boot</span>
-              <span class="skill-chip">Datadog</span>
-              <span class="skill-chip">Jenkins</span>
-              <span class="skill-chip">Git</span>
-            </div>
+        <p class="lead">Backend-focused Software Engineer with 6+ years of experience in Go and Java, specialized in platform infrastructure and event-driven systems.</p>
+        <p class="content">I design reliable, scalable services and improve infrastructure reliability for large-scale systems.</p>
+        <div class="hero-actions">
+          <button class="btn resume-cta" aria-haspopup="true" aria-expanded="false">Download Resume ▾</button>
+          <div class="resume-menu hidden" role="menu" aria-label="Resume options">
+            <a class="btn btn-ghost" href="resume.pdf" target="_blank" rel="noopener" role="menuitem">Open Resume in new tab</a>
+            <a id="download-resume" class="btn btn-ghost" href="resume.pdf" download target="_blank" rel="noopener" role="menuitem">Download PDF</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="work" >
-      <div class="container"><h2>Work Experiences</h2></div>
-    </section>
-
-    <section id="uber" class="company-section section-full">
-      <div class="container">
-        <article class="company company-uber">
-          <div class="content">
-            <h3>Uber</h3>
-            <p class="role-meta">Senior Software Engineer &middot; Bengaluru, India &middot; Jan 2018 - May 2019</p>
-            <ul>
-              <li>Worked on routing and mapping services</li>
-              <li>Improved latency for critical microservices</li>
-              <li>Collaborated across teams on reliability improvements</li>
-            </ul>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="grab" class="company-section section-full">
-      <div class="container">
-        <article class="company company-grab">
-          <div class="content">
-            <h3>Grab</h3>
-            <p class="role-meta">Software Engineer &middot; Singapore &middot; Jun 2016 - Dec 2017</p>
-            <ul>
-              <li>Built internal APIs for payments</li>
-              <li>Implemented monitoring and alerting</li>
-              <li>Reduced deployment times via CI enhancements</li>
-            </ul>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="fourkites" class="company-section section-full">
-      <div class="container">
-        <article class="company company-fourkites">
-          <div class="content">
-            <h3>Fourkites</h3>
-            <p class="role-meta">Software Engineer &middot; Chennai, India &middot; Jun 2019 - Present</p>
-            <ul>
-              <li>Designed and implemented microservices for supply chain workloads</li>
-              <li>Owned features end-to-end from design to production</li>
-              <li>Mentored interns and junior engineers</li>
-            </ul>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="education" class="education section-full">
+    <section id="about" class="section-light">
       <div class="container">
         <div class="content">
-          <h2>Education</h2>
-            <article class="edu-card">
-              <div class="content">
-                <h3>Jadavpur University</h3>
-                <p class="edu-meta">B.E. in Electrical Engineering &middot; 2015 - 2019</p>
-                <ul class="edu-highlights">
-                  <!-- Add highlights here if you like: thesis, coursework, GPA, extracurriculars -->
-                </ul>
-              </div>
-            </article>
+          <h2>About</h2>
+          <p>Backend-focused Software Engineer with 6+ years of experience in Go and Java, including full-stack exposure for internal tooling. Specialized in high-scale Platform Infrastructure (Apache YARN, K8s) and product ecosystems (Lending & Payments). Proven expertise in distributed systems, event-driven architectures, and infrastructure optimization at global scale.</p>
         </div>
       </div>
     </section>
+
+    <section id="skills" class="skills section-light">
+      <div class="container">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-chips">
+            <span class="skill-chip">Go</span>
+            <span class="skill-chip">Java</span>
+            <span class="skill-chip">SQL</span>
+            <span class="skill-chip">C++</span>
+            <span class="skill-chip">Python</span>
+            <span class="skill-chip">Kubernetes</span>
+            <span class="skill-chip">Apache YARN</span>
+            <span class="skill-chip">Docker</span>
+            <span class="skill-chip">AWS</span>
+            <span class="skill-chip">GCP</span>
+            <span class="skill-chip">Kafka</span>
+            <span class="skill-chip">Redis</span>
+            <span class="skill-chip">PostgreSQL</span>
+            <span class="skill-chip">MySQL</span>
+            <span class="skill-chip">Aerospike</span>
+            <span class="skill-chip">ElasticSearch</span>
+            <span class="skill-chip">Spring Boot</span>
+            <span class="skill-chip">Datadog</span>
+            <span class="skill-chip">Jenkins</span>
+            <span class="skill-chip">Git</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="work" class="section-full">
+      <div class="container">
+        <h2>Work Experience</h2>
+        <div class="block_item uber">
+          <h3>Uber — Software Engineer-II (Batch Compute Team)</h3>
+          <p class="role-meta">Oct 2024 – Present</p>
+          <ul>
+            <li>Automated cluster fault isolation and implemented a circuit breaker for YARN Router federation across multiple clusters.</li>
+            <li>Engineered workload admission policy in K8s federation to protect critical services during disaster recovery.</li>
+            <li>Improved scheduling fairness in multi-tenant YARN clusters with timestamp-based ordering.</li>
+          </ul>
+        </div>
+
+        <div class="block_item grab">
+          <h3>Grab — Senior Software Engineer (Lending Team)</h3>
+          <p class="role-meta">Sept 2023 – Oct 2024</p>
+          <ul>
+            <li>Shifted loan processing from batch to real-time event-driven pipelines, reducing system load.</li>
+            <li>Optimized APIs to reduce p95 latency by 40% via strategic DB changes.</li>
+            <li>Built reliable aggregator APIs to integrate multiple internal services and datastores.</li>
+          </ul>
+        </div>
+
+        <div class="block_item grab">
+          <h3>Grab — Software Engineer (PayLater Team)</h3>
+          <p class="role-meta">Oct 2021 – Aug 2023</p>
+          <ul>
+            <li>Led low-level design for idempotent refund APIs and state machines for BNPL launches.</li>
+            <li>Integrated external credit bureau services and designed reconﬁgurable risk-checker modules.</li>
+            <li>Facilitated Go upgrades and refactors; received recognition for engineering excellence.</li>
+          </ul>
+        </div>
+
+        <div class="block_item fourkites">
+          <h3>Fourkites — Software Engineer</h3>
+          <p class="role-meta">Jun 2019 – Oct 2021</p>
+          <ul>
+            <li>Designed Redis-based caching system handling 50k+ shipments; architecture reused across teams.</li>
+            <li>Built global port autocomplete APIs with sub-second response times.</li>
+            <li>Developed internal event-simulation tooling to increase QA productivity.</li>
+          </ul>
+        </div>
+      </div>
+    </section> 
+
+    <section id="education" class="section-full">
+      <div class="container">
+        <h2>Education</h2>
+          <div class="block_item jadavpur">
+            <h3>Jadavpur University</h3>
+            <p class="edu-meta">B.E. in Electrical Engineering · Aug 2015 – May 2019</p>
+            <ul class="edu-highlights">
+              <li>Relevant coursework: Data Structures & Algorithms, Computer Networks, Signals & Systems</li>
+            </ul>
+          </div>
+      </div>
+    </section> 
   </main>
 
   <footer class="site-footer">
