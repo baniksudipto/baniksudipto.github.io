@@ -48,12 +48,12 @@
   <script>
     (async function(){
       try {
-        const resp = await fetch('resume.pdf', { method: 'GET' });
+        const resp = await fetch('sudipta_banik_software_engineer_cv.pdf', { method: 'GET' });
         if (resp && resp.ok) {
           const ct = resp.headers.get('content-type') || '';
           if (ct.includes('pdf') || resp.url.endsWith('.pdf')) {
             // Redirect to the PDF so the browser can open or download it
-            window.location.replace('resume.pdf');
+            window.location.replace('sudipta_banik_software_engineer_cv.pdf');
             return;
           }
         }
