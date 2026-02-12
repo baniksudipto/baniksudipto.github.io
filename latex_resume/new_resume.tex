@@ -1,0 +1,145 @@
+\documentclass[11pt,a4paper]{article}
+
+% --- Packages ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[default]{lato}
+\usepackage[margin=1.25cm]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+
+% --- Layout Setup ---
+\setlength{\parindent}{0pt}
+% --- Custom Commands ---
+\titleformat{\section}
+{\large\bfseries\uppercase}{}{0em}{\vspace{6pt}}
+\titlespacing{\section}{0pt}{12pt}{6pt}
+
+\newcommand{\multicompanyheader}[1]{
+    \vspace{3pt}
+    \textbf{\Large #1}
+    \vspace{3pt}
+}
+
+\newcommand{\roleitem}[4]{
+    \vspace{2pt}
+    \textbf{#1} \hfill #2 \\
+    \textit{#3} \hfill #4 \vspace{6pt}
+    \begin{itemize}[leftmargin=*, noitemsep, topsep=1pt, label={\small\textbullet}]
+}
+
+\newcommand{\roleend}{
+    \end{itemize}
+    \vspace{3pt}
+}
+
+\newcommand{\experienceitem}[6]{
+    \vspace{3pt}
+    \textbf{\Large #1} \hfill #5 \\
+    \textit{#2 | #3} \hfill #4 \vspace{6pt}
+    \begin{itemize}[leftmargin=*, noitemsep, topsep=1pt, label={\small\textbullet}]
+        #6
+    \end{itemize}
+    \vspace{2pt}
+}
+
+\begin{document}
+
+% --- HEADER ---
+\begin{center}
+    {\fontsize{22pt}{26pt}\selectfont\bfseries SUDIPTA BANIK} \\ \vspace{6pt}
+    \small
+    +91 9051073567 | sudiptabanik112@gmail.com \\ \vspace{4pt}
+    \href{https://linkedin.com/in/sudipta-banik}{linkedin.com/in/sudipta-banik} | \href{https://github.com/baniksudipto}{github.com/baniksudipto}
+    \vspace{3pt}
+\end{center}
+
+% --- SUMMARY ---
+\section{Professional Profile}
+Seeking Senior Software Engineer (Backend) roles to build reliable platforms for millions of users globally. 6+ years experience with supply chain visibility at FourKites and fintech products at Grab (microservices, distributed systems, event-driven architecture in Go/Java), plus batch compute platform managing thousands of nodes and batch workloads on Apache stack at Uber.
+
+% --- EXPERIENCE ---
+\section{Professional Experience}
+
+\experienceitem{UBER}{Software Engineer (L4)}{Batch Compute Team}{Bangalore, India}{Oct 2024 -- Present}
+{
+    \item \textbf{Automated cluster fault isolation:} Implemented a Resilience4j layer on the Apache YARN Router with per-cluster circuit breakers and retries, reducing manual incident MTTR from ~15 minutes to under 60 seconds.
+
+    \item \textbf{Kubernetes admission controls:} Built a ConfigMap-driven admission policy to block low-tier apps during outages, protecting capacity for high-priority workloads (blocked ~7\% of concurrent volume).
+    
+    \item \textbf{Apache YARN scheduling improvements:} Moved application-id generation to the YARN Router and enforced submission time based ordering, reducing scheduling out-of-order delays by ~20s in smaller clusters.
+
+    \item \textbf{Cluster federation management CLI:} Built an Apache YARN router federation CLI command with Zookeeper-backed runtime state to instantly detach problematic sub-clusters, stop RPCs to unhealthy clusters, and contain incident blast radius.
+
+    \item \textbf{Mitigated host instability:} Implemented strict memory reservations for critical host agents (e.g., SSH) to prevent OOM kills during heavy memory-load from Apache YARN jobs, improving host availability under load.
+
+    \item \textbf{Improved K8s operational visibility:} Enhanced the internal application listing with job-id search and resource-usage shading, reducing operator time-to-debug.
+}
+
+\vspace{2pt}
+
+\multicompanyheader{GRAB}
+
+\roleitem{Senior Software Engineer}{Aug 2023 -- Oct 2024}{Lending Core Team}{Bangalore, India}
+    \item Contributed to redesigning the loan eligibility processing engine from a bi-weekly batch process to an \textbf{event-driven system triggered by real-time driver activity}. This \textbf{eliminated data lag} and \textbf{redistributed the processing load for millions of drivers across five markets, reducing peak database demand by approximately 30\% and increasing loan product adoption}.
+    
+    \item Optimized loan creation API performance by implementing \textbf{MySQL batch inserts} for instalment processing, \textbf{reducing p95 latency by 40\%}. The reduction in network round-trips and lock acquisitions \textbf{improved throughput during high-concurrency database writes}. 
+
+    \item Developed a \textbf{scalable data aggregator} consuming 5+ internal APIs to facilitate banking partnerships; optimized for \textbf{sub-second latency} and implemented \textbf{partial response logic} to ensure \textbf{high system availability}.
+
+    \item Enhanced an internal \textbf{retry framework} built on top of a Kafka connector, enabling \textbf{message re-queuing for reprocessing} during application shut-down to \textbf{prevent data loss}.
+    
+    \item Mentorship: Facilitated \textbf{codebase deep-dives and technical onboarding} for new hires to accelerate team integration.
+\roleend
+
+\roleitem{Software Engineer}{Oct 2021 -- Aug 2023}{PayLater Team}{Bangalore, India}
+    \item Designed the \textbf{BNPL Refund API} to support Grab's expansion into Indonesia. Successfully \textbf{scaled the service to 10\% of the country's user base} during the initial launch phase. Integrated \textbf{idempotent design and state machine logic to automate error recovery and complex refund flows}.
+
+    \item Developed a \textbf{tiered service fee engine} for the Indonesia BNPL rollout. Orchestrated changes across \textbf{real-time Charge APIs and batch billing systems to calculate usage-based fees}. Integrated \textbf{slab-rate logic} and ensured fee charges during initial monthly transaction.
+
+    \item Created \textbf{low-level design for a credit risk checker module}, featuring configurability, and developed an API client for \textbf{country specific credit bureau integration}, collaborating with product management and external credit bureau.
+
+    \item Designed and implemented a \textbf{robust lending credit score API}, integrating data from multiple internal services. Drove discussions with internal data-science team and product teams, ensuring \textbf{adherence to API design and security best practices}.
+
+    \item Collaborated in cross-service \textbf{technical debt reduction}, including a Go version migration and \textbf{full go mod adoption}. Improved \textbf{build pipeline speeds by 18\%} and \textbf{reduced container image sizes}. Executed a comprehensive refactor that \textbf{increased unit test coverage by 20\%} and ensured strict \textbf{clean-code adherence}.
+    
+    \item Awarded \textbf{"The Grab Way Award" in 2023} for engineering excellence in BNPL project.
+\roleend
+
+\vspace{2pt}
+
+\experienceitem{FOURKITES INC.}{Software Engineer}{Multimodal Supply Chain Visibility Team}{Chennai, India}{Jun 2019 -- Oct 2021}
+{
+    \item \textbf{Designed and implemented a scalable API response caching system} for generic tracking data, utilising \textbf{Redis to efficiently store and retrieve responses for 50,000+ ocean shipments} across 10+ ocean carriers. Successfully \textbf{containerized, deployed, and tested} the system. Later adopted by rail and air shipment teams, expanding its use.
+
+    \item \textbf{Designed an asynchronous Kafka-based pipeline} to enrich maritime ETD events by \textbf{integrating distributed microservices into a unified callback payload}, decoupling ingestion from enrichment to ensure \textbf{high-throughput delivery of real-time shipment updates}.
+
+    \item \textbf{Port Address Autocomplete API:} Developed global port autocomplete APIs using \textbf{composite indexing} on various granularity levels to achieve \textbf{sub-second search response times}.
+
+    \item \textbf{Conceptualized and oversaw the development of an internal tool} for creating shipment tracking events, mentoring an intern, and \textbf{boosting QA productivity}. \textbf{Reducing tracking event testing time by ~20mins}.
+
+    \item \textbf{Integrated ocean-specific features into common shipment cloning module} to streamline new client demonstrations. This enhancement enabled tailored, \textbf{domain-specific data replication}, improving the \textbf{accuracy and impact of the sales engineering process}.
+}
+
+% --- EDUCATION ---
+\section{Education}
+{\large\textbf{Jadavpur University}} \hfill Aug 2015 -- May 2019 \\
+\textit{Bachelor of Engineering in Electrical Engineering} \hfill Kolkata, India \\
+\vspace{2pt}
+\textit{Relevant Coursework:} C++, Data Structures \& Algorithms, Computer Networks, Signals \& Systems, Engineering Mathematics
+
+% --- SKILLS ---
+\section{Technical Skills}
+\begin{itemize}[leftmargin=*, noitemsep]
+    \item \textbf{Languages:} Go, Java, SQL, C++, Python
+    \item \textbf{Infrastructure:} Kubernetes (K8s), Apache YARN, Docker, AWS, GCP
+    \item \textbf{Backend \& Messaging:} Kafka, Redis, PostgreSQL, MySQL, Aerospike, ElasticSearch
+    \item \textbf{Tools/Frameworks:} Spring Boot, Datadog, Jenkins, Git
+\end{itemize}
+
+% --- LANGUAGES ---
+\section{Languages}
+\textbf{English:} Full Professional Proficiency \quad \textbf{Bengali:} Native
+
+\end{document}
