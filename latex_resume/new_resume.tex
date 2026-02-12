@@ -51,7 +51,7 @@
 \begin{center}
     {\fontsize{22pt}{26pt}\selectfont\bfseries SUDIPTA BANIK} \\ \vspace{6pt}
     \small
-    +91 9051073567 | sudiptabanik112@gmail.com \\ \vspace{4pt}
+    +91 9051073567 | sudiptabanik.dev@gmail.com \\ \vspace{4pt}
     \href{https://linkedin.com/in/sudipta-banik}{linkedin.com/in/sudipta-banik} | \href{https://github.com/baniksudipto}{github.com/baniksudipto}
     \vspace{3pt}
 \end{center}
@@ -65,15 +65,17 @@ Seeking Senior Software Engineer (Backend) roles to build reliable platforms for
 
 \experienceitem{UBER}{Software Engineer (L4)}{Batch Compute Team}{Bangalore, India}{Oct 2024 -- Present}
 {
-    \item \textbf{Automated cluster fault isolation:} Implemented a Resilience4j layer on the Apache YARN Router with per-cluster circuit breakers and retries, reducing manual incident MTTR from ~15 minutes to under 60 seconds.
+    \item \textbf{Automated cluster fault isolation:} Implemented a Resilience4j layer on the Apache YARN Router with per-cluster circuit breakers and retries, reducing manual incident MTTR from around 15 minutes to under 60 seconds.
 
-    \item \textbf{Kubernetes admission controls:} Built a ConfigMap-driven admission policy to block low-tier apps during outages, protecting capacity for high-priority workloads (blocked ~7\% of concurrent volume).
+    \item \textbf{Kubernetes admission controls:} Built a ConfigMap-driven admission policy to block low-tier apps during outages, protecting capacity for high-priority workloads (blocked around 7\% of total concurrent volume).
     
-    \item \textbf{Apache YARN scheduling improvements:} Moved application-id generation to the YARN Router and enforced submission time based ordering, reducing scheduling out-of-order delays by ~20s in smaller clusters.
+    \item \textbf{Apache YARN scheduling improvements:} Moved application-id generation to the YARN Router and enforced submission time based ordering, reducing scheduling out-of-order delays by almost 20s in smaller clusters.
 
     \item \textbf{Cluster federation management CLI:} Built an Apache YARN router federation CLI command with Zookeeper-backed runtime state to instantly detach problematic sub-clusters, stop RPCs to unhealthy clusters, and contain incident blast radius.
 
-    \item \textbf{Improved K8s operational visibility:} Enhanced the internal application listing with job-id search and resource-usage shading, reducing operator time-to-debug.
+    \item \textbf{Mitigated host instability:} Did analysis and re-configured memory reservations for critical host agents (e.g., ssh) to prevent OOM kills during heavy memory pressure while running Apache YARN workloads.
+
+    \item \textbf{Improved K8s operational visibility:} Enhanced the internal application listing with job-id search and resource-usage shading, improving operational efficiency.
 }
 
 \vspace{2pt}
@@ -83,7 +85,7 @@ Seeking Senior Software Engineer (Backend) roles to build reliable platforms for
 \roleitem{Senior Software Engineer}{Aug 2023 -- Oct 2024}{Lending Core Team}{Bangalore, India}
     \item Contributed to redesigning the loan eligibility processing engine from a bi-weekly batch process to an \textbf{event-driven system triggered by real-time driver activity}. This \textbf{eliminated data lag} and \textbf{redistributed the processing load for millions of drivers across five markets, reducing peak database demand by approximately 30\% and increasing loan product adoption}.
     
-    \item Optimized loan creation API performance by implementing \textbf{MySQL batch inserts} for instalment processing, \textbf{reducing p95 latency by 40\%}. The reduction in network round-trips and lock acquisitions \textbf{improved throughput during high-concurrency database writes}. 
+    \item Optimized loan creation API performance by implementing \textbf{MySQL batch inserts} for instalment processing, \textbf{reducing p95 latency by almost 32\%}. The reduction in network round-trips and lock acquisitions \textbf{improved throughput during high-concurrency database writes}. 
 
     \item Developed a \textbf{scalable data aggregator} consuming 5+ internal APIs to facilitate banking partnerships; optimized for \textbf{sub-second latency} and implemented \textbf{partial response logic} to ensure \textbf{high system availability}.
 
@@ -116,7 +118,7 @@ Seeking Senior Software Engineer (Backend) roles to build reliable platforms for
 
     \item \textbf{Port Address Autocomplete API:} Developed global port autocomplete APIs using \textbf{composite indexing} on various granularity levels to achieve \textbf{sub-second search response times}.
 
-    \item \textbf{Conceptualized and oversaw the development of an internal tool} for creating shipment tracking events, mentoring an intern, and \textbf{boosting QA productivity}. \textbf{Reducing tracking event testing time by ~20mins}.
+    \item \textbf{Conceptualized and oversaw the development of an internal tool} for creating shipment tracking events, mentoring an intern, and \textbf{boosting QA productivity}. \textbf{Reducing tracking event testing time significantly}.
 
     \item \textbf{Integrated ocean-specific features into common shipment cloning module} to streamline new client demonstrations. This enhancement enabled tailored, \textbf{domain-specific data replication}, improving the \textbf{accuracy and impact of the sales engineering process}.
 }
