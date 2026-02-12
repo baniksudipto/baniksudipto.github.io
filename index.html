@@ -69,22 +69,27 @@
       <div class="container">
         <h2>Work Experience</h2>
         <div class="block_item uber">
-          <h3>Uber — Software Engineer-II (Batch Compute Team)</h3>
+          <h3>Uber — Software Engineer (L4) - Batch Compute Team</h3>
           <p class="role-meta">Oct 2024 – Present</p>
           <ul>
-            <li>Automated cluster fault isolation and implemented a circuit breaker for YARN Router federation across multiple clusters.</li>
-            <li>Engineered workload admission policy in K8s federation to protect critical services during disaster recovery.</li>
-            <li>Improved scheduling fairness in multi-tenant YARN clusters with timestamp-based ordering.</li>
+            <li><strong>Automated cluster fault isolation:</strong> Implemented a Resilience4j layer on the Apache YARN Router with per-cluster circuit breakers and retries, reducing manual incident MTTR from ~15 minutes to under 60 seconds.</li>
+            <li><strong>Kubernetes admission controls:</strong> Built a ConfigMap-driven admission policy to block low-tier apps during outages, protecting capacity for high-priority workloads (blocked ~7% of concurrent volume).</li>
+            <li><strong>Apache YARN scheduling improvements:</strong> Moved application-id generation to the YARN Router and enforced submission time based ordering, reducing scheduling out-of-order delays by ~20s in smaller clusters.</li>
+            <li><strong>Cluster federation management CLI:</strong> Built an Apache YARN router federation CLI command with Zookeeper-backed runtime state to instantly detach problematic sub-clusters and contain incident blast radius.</li>
+            <li><strong>Mitigated host instability:</strong> Implemented strict memory reservations for critical host agents to prevent OOM kills during heavy memory-load from Apache YARN jobs.</li>
+            <li><strong>Improved K8s operational visibility:</strong> Enhanced the internal application listing with job-id search and resource-usage shading, reducing operator time-to-debug.</li>
           </ul>
         </div>
 
         <div class="block_item grab">
-          <h3>Grab — Senior Software Engineer (Lending Team)</h3>
-          <p class="role-meta">Sept 2023 – Oct 2024</p>
+          <h3>Grab — Senior Software Engineer (Lending Core Team)</h3>
+          <p class="role-meta">Aug 2023 – Oct 2024</p>
           <ul>
-            <li>Shifted loan processing from batch to real-time event-driven pipelines, reducing system load.</li>
-            <li>Optimized APIs to reduce p95 latency by 40% via strategic DB changes.</li>
-            <li>Built reliable aggregator APIs to integrate multiple internal services and datastores.</li>
+            <li>Contributed to redesigning the loan eligibility processing engine from a bi-weekly batch process to an <strong>event-driven system triggered by real-time driver activity</strong>. This <strong>eliminated data lag</strong> and <strong>redistributed the processing load for millions of drivers across five markets, reducing peak database demand by approximately 30%</strong>.</li>
+            <li>Optimized loan creation API performance by implementing <strong>MySQL batch inserts</strong> for instalment processing, <strong>reducing p95 latency by 40%</strong>. The reduction in network round-trips and lock acquisitions improved throughput during high-concurrency database writes.</li>
+            <li>Developed a <strong>scalable data aggregator</strong> consuming 5+ internal APIs to facilitate banking partnerships; optimized for <strong>sub-second latency</strong> and implemented <strong>partial response logic</strong> to ensure high system availability.</li>
+            <li>Enhanced an internal <strong>retry framework</strong> built on top of a Kafka connector, enabling <strong>message re-queuing for reprocessing</strong> during application shut-down to prevent data loss.</li>
+            <li>Mentorship: Facilitated <strong>codebase deep-dives and technical onboarding</strong> for new hires to accelerate team integration.</li>
           </ul>
         </div>
 
@@ -92,19 +97,24 @@
           <h3>Grab — Software Engineer (PayLater Team)</h3>
           <p class="role-meta">Oct 2021 – Aug 2023</p>
           <ul>
-            <li>Led low-level design for idempotent refund APIs and state machines for BNPL launches.</li>
-            <li>Integrated external credit bureau services and designed reconﬁgurable risk-checker modules.</li>
-            <li>Facilitated Go upgrades and refactors; received recognition for engineering excellence.</li>
+            <li>Designed the <strong>BNPL Refund API</strong> to support Grab's expansion into Indonesia. Successfully <strong>scaled the service to 10% of the country's user base</strong> during the initial launch phase. Integrated <strong>idempotent design and state machine logic</strong> to automate error recovery and complex refund flows.</li>
+            <li>Developed a <strong>tiered service fee engine</strong> for the Indonesia BNPL rollout. Orchestrated changes across <strong>real-time Charge APIs and batch billing systems</strong> to calculate usage-based fees and integrated <strong>slab-rate logic</strong>.</li>
+            <li>Created <strong>low-level design for a credit risk checker module</strong>, featuring configurability and developed an API client for <strong>country specific credit bureau integration</strong>.</li>
+            <li>Designed and implemented a <strong>robust lending credit score API</strong>, integrating data from multiple internal services. Drove discussions with internal data-science team and product teams.</li>
+            <li>Collaborated in cross-service <strong>technical debt reduction</strong>, including a Go version migration and <strong>full go mod adoption</strong>. Improved <strong>build pipeline speeds by 18%</strong> and <strong>reduced container image sizes</strong>. Executed a comprehensive refactor that <strong>increased unit test coverage by 20%</strong>.</li>
+            <li>Awarded <strong>"The Grab Way Award" in 2023</strong> for engineering excellence in BNPL project.</li>
           </ul>
         </div>
 
         <div class="block_item fourkites">
-          <h3>Fourkites — Software Engineer</h3>
+          <h3>Fourkites Inc. — Software Engineer (Multimodal Supply Chain Visibility)</h3>
           <p class="role-meta">Jun 2019 – Oct 2021</p>
           <ul>
-            <li>Designed Redis-based caching system handling 50k+ shipments; architecture reused across teams.</li>
-            <li>Built global port autocomplete APIs with sub-second response times.</li>
-            <li>Developed internal event-simulation tooling to increase QA productivity.</li>
+            <li><strong>Designed and implemented a scalable API response caching system</strong> for generic tracking data, utilising <strong>Redis to efficiently store and retrieve responses for 50,000+ ocean shipments</strong> across 10+ ocean carriers. Successfully containerized, deployed, and tested the system. Later adopted by rail and air shipment teams.</li>
+            <li><strong>Designed an asynchronous Kafka-based pipeline</strong> to enrich maritime ETD events by <strong>integrating distributed microservices into a unified callback payload</strong>, decoupling ingestion from enrichment to ensure high-throughput delivery of real-time shipment updates.</li>
+            <li><strong>Port Address Autocomplete API:</strong> Developed global port autocomplete APIs using <strong>composite indexing</strong> on various granularity levels to achieve <strong>sub-second search response times</strong>.</li>
+            <li><strong>Conceptualized and oversaw the development of an internal tool</strong> for creating shipment tracking events, mentoring an intern, and boosting QA productivity. Reducing tracking event testing time by ~20mins.</li>
+            <li><strong>Integrated ocean-specific features into common shipment cloning module</strong> to streamline new client demonstrations. This enhancement enabled tailored, domain-specific data replication, improving the accuracy and impact of the sales engineering process.</li>
           </ul>
         </div>
       </div>
@@ -115,9 +125,9 @@
         <h2>Education</h2>
           <div class="block_item jadavpur">
             <h3>Jadavpur University</h3>
-            <p class="edu-meta">B.E. in Electrical Engineering · Aug 2015 – May 2019</p>
+            <p class="edu-meta">Bachelor of Engineering in Electrical Engineering · Aug 2015 – May 2019 · Kolkata, India</p>
             <ul class="edu-highlights">
-              <li>Relevant coursework: Data Structures & Algorithms, Computer Networks, Signals & Systems</li>
+              <li><strong>Relevant Coursework:</strong> C++, Data Structures & Algorithms, Computer Networks, Signals & Systems, Engineering Mathematics</li>
             </ul>
           </div>
       </div>
