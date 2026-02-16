@@ -52,7 +52,7 @@
     {\fontsize{22pt}{26pt}\selectfont\bfseries SUDIPTA BANIK} \\ \vspace{6pt}
     \small
     +91 9051073567 | sudiptabanik.dev@gmail.com \\ \vspace{4pt}
-    \href{https://linkedin.com/in/sudipta-banik}{linkedin.com/in/sudipta-banik} | \href{https://github.com/baniksudipto}{github.com/baniksudipto}
+    \href{https://linkedin.com/in/sudipta-banik}{linkedin.com/in/sudipta-banik}
     \vspace{3pt}
 \end{center}
 
@@ -61,7 +61,7 @@
 Seeking Senior Software Engineer (Backend) roles to build reliable platforms for millions of users globally. 6+ years experience with supply chain visibility at FourKites and fintech products at Grab (microservices, distributed systems, event-driven architecture in Go/Java), plus batch compute platform managing thousands of nodes and batch workloads on Apache stack at Uber.
 
 % --- EXPERIENCE ---
-\section{Professional Experience}
+\section{Work Experience}
 
 \experienceitem{UBER}{Software Engineer (L4)}{Batch Compute Team}{Bangalore, India}{Oct 2024 -- Present}
 {
@@ -73,9 +73,9 @@ Seeking Senior Software Engineer (Backend) roles to build reliable platforms for
 
     \item \textbf{Cluster federation management CLI:} Built an Apache YARN router federation CLI command with Zookeeper-backed runtime state to instantly detach problematic sub-clusters, stop RPCs to unhealthy clusters, and contain incident blast radius.
 
-    \item \textbf{Mitigated host instability:} Did analysis and re-configured memory reservations for critical host agents (e.g., ssh) to prevent OOM kills during heavy memory pressure while running Apache YARN workloads.
+    \item \textbf{Mitigated host instability:} Analyzed and optimized Yarn host memory requirements, effectively preventing Out of Memory (OOM) errors and enhancing the stability of the Apache YARN cluster during high-memory workloads.
 
-    \item \textbf{Improved K8s operational visibility:} Enhanced the internal application listing with job-id search and resource-usage shading, improving operational efficiency.
+    \item \textbf{Improved K8s operational visibility:} Enhanced Uber's Kubernetes batch job dashboard with job-id search and resource-usage visualization, reducing incident triage time.
 }
 
 \vspace{2pt}
@@ -83,44 +83,44 @@ Seeking Senior Software Engineer (Backend) roles to build reliable platforms for
 \multicompanyheader{GRAB}
 
 \roleitem{Senior Software Engineer}{Aug 2023 -- Oct 2024}{Lending Core Team}{Bangalore, India}
-    \item Contributed to redesigning the loan eligibility processing engine from a bi-weekly batch process to an \textbf{event-driven system triggered by real-time driver activity}. This \textbf{eliminated data lag} and \textbf{redistributed the processing load for millions of drivers across five markets, reducing peak database demand by approximately 30\% and increasing loan product adoption}.
+    \item Contributed to redesigning the loan eligibility processing engine from a bi-weekly batch process to an \textbf{event-driven system triggered by real-time driver activity}. This \textbf{eliminated data lag} and \textbf{redistributed the processing load for millions of drivers across five international markets, reducing peak database demand by approximately 30\% and increasing loan product adoption}.
     
     \item Optimized loan creation API performance by implementing \textbf{MySQL batch inserts} for instalment processing, \textbf{reducing p95 latency by almost 32\%}. The reduction in network round-trips and lock acquisitions \textbf{improved throughput during high-concurrency database writes}. 
 
     \item Developed a \textbf{scalable data aggregator} consuming 5+ internal APIs to facilitate banking partnerships; optimized for \textbf{sub-second latency} and implemented \textbf{partial response logic} to ensure \textbf{high system availability}.
 
-    \item Enhanced an internal \textbf{retry framework} built on top of a Kafka connector, enabling \textbf{message re-queuing for reprocessing} during application shut-down to \textbf{prevent data loss}.
+    \item Enhanced the Go Kafka message retry framework by enabling message re-queuing for reprocessing during application shutdowns, reducing message loss incidents to near zero and improving system reliability.
     
-    \item Mentorship: Facilitated \textbf{codebase deep-dives and technical onboarding} for new hires to accelerate team integration.
+    \item Mentored 2 new hires, accelerating onboarding and reducing ramp-up time.
 \roleend
 
 \roleitem{Software Engineer}{Oct 2021 -- Aug 2023}{PayLater Team}{Bangalore, India}
-    \item Designed the \textbf{BNPL Refund API} to support Grab's expansion into Indonesia. Successfully \textbf{scaled the service to 10\% of the country's user base} during the initial launch phase. Integrated \textbf{idempotent design and state machine logic to automate error recovery and complex refund flows}.
+    \item Faced with the need to support Grab's expansion into Indonesia, designed and scaled the \textbf{BNPL Refund API} to handle 10\% of the country's user base at launch. Introduced \textbf{idempotent design and state machine logic}, automating error recovery and complex refund flows, which improved reliability and user satisfaction.
 
-    \item Developed a \textbf{tiered service fee engine} for the Indonesia BNPL rollout. Orchestrated changes across \textbf{real-time Charge APIs and batch billing systems to calculate usage-based fees}. Integrated \textbf{slab-rate logic} and ensured fee charges during initial monthly transaction.
+    \item Developed a \textbf{tiered service fee engine} for the Indonesia BNPL rollout. Orchestrated changes across \textbf{real-time Charge APIs and batch billing systems to calculate usage-based fees} according to the country's regulatory requirements. Integrated \textbf{slab-rate logic} and ensured fee charges during initial monthly transaction.
 
-    \item Created \textbf{low-level design for a credit risk checker module}, featuring configurability, and developed an API client for \textbf{country specific credit bureau integration}, collaborating with product management and external credit bureau.
+    \item Designed and delivered a configurable credit risk checker module, collaborating with product management and external credit bureaus to integrate country-specific requirements and ensure regulatory compliance.
 
     \item Designed and implemented a \textbf{robust lending credit score API}, integrating data from multiple internal services. Drove discussions with internal data-science team and product teams, ensuring \textbf{adherence to API design and security best practices}.
 
     \item Collaborated in cross-service \textbf{technical debt reduction}, including a Go version migration and \textbf{full go mod adoption}. Improved \textbf{build pipeline speeds by 18\%} and \textbf{reduced container image sizes}. Executed a comprehensive refactor that \textbf{increased unit test coverage by 20\%} and ensured strict \textbf{clean-code adherence}.
     
-    \item Awarded \textbf{"The Grab Way Award" in 2023} for engineering excellence in BNPL project.
+    \item Recognized with \textbf{``The Grab Way Award'' in 2023} for leading engineering improvements in the BNPL project, which enhanced system reliability and supported business growth.
 \roleend
 
 \vspace{2pt}
 
 \experienceitem{FOURKITES INC.}{Software Engineer}{Multimodal Supply Chain Visibility Team}{Chennai, India}{Jun 2019 -- Oct 2021}
 {
-    \item \textbf{Designed and implemented a scalable API response caching system} for generic tracking data, utilising \textbf{Redis to efficiently store and retrieve responses for 50,000+ ocean shipments} across 10+ ocean carriers. Successfully \textbf{containerized, deployed, and tested} the system. Later adopted by rail and air shipment teams, expanding its use.
+    \item \textbf{Architected and implemented a scalable API response caching system} using Redis to enable direct integration with 8+ global meritime carriers, reducing reliance on costly third-party data providers. Designed carrier-specific caching to comply with API rate limits, and built end-to-end data collection and update flows to ensure timely and cost-effective shipment tracking.
+
+    \item Resolved search disruptions by replacing a shared Elasticsearch dependency with a specialized Port Autocomplete API; utilized \textbf{composite indexing and in-memory caching} for ~80k ports to achieve \textbf{sub-100ms latency and operational independence}.
 
     \item \textbf{Designed an asynchronous Kafka-based pipeline} to enrich maritime ETD events by \textbf{integrating distributed microservices into a unified callback payload}, decoupling ingestion from enrichment to ensure \textbf{high-throughput delivery of real-time shipment updates}.
 
-    \item \textbf{Port Address Autocomplete API:} Developed global port autocomplete APIs using \textbf{composite indexing} on various granularity levels to achieve \textbf{sub-second search response times}.
+    \item Identified inefficiencies in QA testing and led the development of an internal tool for creating shipment tracking events, mentoring an intern in the process. This reduced tracking event testing time significantly and improved QA productivity.
 
-    \item \textbf{Conceptualized and oversaw the development of an internal tool} for creating shipment tracking events, mentoring an intern, and \textbf{boosting QA productivity}. \textbf{Reducing tracking event testing time significantly}.
-
-    \item \textbf{Integrated ocean-specific features into common shipment cloning module} to streamline new client demonstrations. This enhancement enabled tailored, \textbf{domain-specific data replication}, improving the \textbf{accuracy and impact of the sales engineering process}.
+    \item \textbf{Integrated ocean-specific features into common shipment cloning module} to streamline new client demonstrations. This enhancement enabled tailored, \textbf{domain-specific data replication}, improving the \textbf{accuracy and impact of the sales demos}.
 }
 
 % --- EDUCATION ---
