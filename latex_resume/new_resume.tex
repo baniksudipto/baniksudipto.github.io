@@ -58,7 +58,7 @@
 
 % --- SUMMARY ---
 \section{Summary}
-Software Engineer (Backend) with 6+ years of experience building and optimising distributed systems in Go and Java at Uber, Grab, and FourKites. At Uber, I hardened Apache YARN and Kubernetes reliability by implementing automated cluster fault isolation and a YARN CLI that slashed incident MTTR from 15+ minutes to under 60 seconds. At Grab, I delivered the Indonesia BNPL launch for millions of users by architecting idempotent refund APIs and tiered fee modules, while re-engineering loan eligibility into a real-time event-driven system that reduced peak DB demand by 30%. At FourKites, I eliminated costly third-party data dependencies by architecting Redis-based carrier tracking info caching and sub-100ms port autocomplete APIs. I am proficient in K8s, Kafka, MySQL, and Redis, and I deliver high-scale systems across international, distributed teams.
+Software Engineer (Backend) with 6+ years of experience building and optimising distributed systems in Go and Java at Uber, Grab, and FourKites. At Uber, I hardened Apache YARN and Kubernetes reliability by implementing automated cluster fault isolation and a YARN CLI that slashed incident MTTR from 15+ minutes to under 60 seconds. At Grab, I delivered the Indonesia BNPL launch for millions of users by architecting idempotent refund APIs and tiered fee modules, while re-engineering loan eligibility into a real-time event-driven system that reduced peak DB demand by almost 30\%. At FourKites, I eliminated costly third-party data dependencies by architecting Redis-based carrier tracking info caching and sub-100ms port autocomplete APIs. I am proficient in K8s, Kafka, MySQL, and Redis, and I deliver high-scale systems across international, distributed teams.
 
 % --- EXPERIENCE ---
 \section{Work Experience}
@@ -83,11 +83,11 @@ Software Engineer (Backend) with 6+ years of experience building and optimising 
 \multicompanyheader{GRAB}
 
 \roleitem{Senior Software Engineer}{Aug 2023 -- Oct 2024}{Lending Core Team}{Bangalore, India}
-    \item Contributed to redesigning the loan eligibility processing engine from a bi-weekly batch process to an \textbf{event-driven system triggered by real-time driver activity}. This \textbf{eliminated data lag} and \textbf{redistributed the processing load for millions of drivers across five international markets, reducing peak database demand by approximately 30\% and increasing loan product adoption}.
+    \item Contributed to redesigning the loan eligibility processing engine from a bi-weekly batch process to an \textbf{event-driven system triggered by real-time driver activity}. This \textbf{eliminated data lag} and \textbf{redistributed the processing load for millions of drivers by approximately 30\% and increasing loan product adoption}.
     
     \item Optimized loan creation API performance by implementing \textbf{MySQL batch inserts} for instalment processing, \textbf{reducing p95 latency by almost 32\%}. The reduction in network round-trips and lock acquisitions \textbf{improved throughput during high-concurrency database writes}. 
 
-    \item Developed a \textbf{scalable data aggregator} consuming 5+ internal APIs to facilitate banking partnerships; optimized for \textbf{sub-second latency} and implemented \textbf{partial response logic} to ensure \textbf{high system availability}.
+    \item Developed a new \textbf{scalable data aggregator} consuming 5+ internal APIs to facilitate banking partnerships; optimized for \textbf{sub-second latency} and implemented \textbf{partial response logic} to ensure \textbf{high system availability}.
 
     \item Enhanced the Go Kafka message retry framework by enabling message re-queuing for reprocessing during application shutdowns, reducing message loss incidents to near zero and improving system reliability.
     
