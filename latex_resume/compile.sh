@@ -1,0 +1,5 @@
+#!/bin/bash
+pdflatex -interaction=nonstopmode sudipta_banik_software_engineer_resume.tex
+pdflatex -interaction=nonstopmode sudipta_banik_software_engineer_resume.tex
+
+cp sudipta_banik_software_engineer_resume.pdf ../sudipta_banik_software_engineer_resume.pdf

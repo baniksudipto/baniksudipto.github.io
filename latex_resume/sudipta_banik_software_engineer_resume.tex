@@ -24,9 +24,11 @@
 % --- Layout Setup ---
 \setlength{\parindent}{0pt}
 % --- Custom Commands ---
+
+\usepackage{titlesec}
 \titleformat{\section}
-{\large\bfseries\uppercase}{}{0em}{\vspace{3pt}}
-\titlespacing{\section}{0pt}{12pt}{3pt}
+{\large\bfseries\uppercase}{}{0em}{\vspace{3pt}}[\color{gray!40}\titlerule]
+\titlespacing{\section}{0pt}{12pt}{6pt}
 
 % --- Company Header ---
 \newcommand{\companyheader}[1]{
@@ -39,14 +41,12 @@
 \newcommand{\roleblock}[5]{
     \vspace{2pt}
     \noindent
-    \begin{minipage}{\textwidth}
     \textbf{#1} \hfill #2 \\
     \textit{#3} \hfill #4 \vspace{3pt}
     \begin{itemize}[leftmargin=*, noitemsep, topsep=1pt, label={\small\textbullet}]
     \RaggedRight
         #5
     \end{itemize}
-    \end{minipage}
     \vspace{1pt}
 }
 
@@ -54,18 +54,22 @@
 \begin{document}
 
 % --- HEADER ---
-\begin{center}
-    {\fontsize{22pt}{24pt}\selectfont\bfseries SUDIPTA BANIK} \\ \vspace{6pt}
+\begin{minipage}[c]{0.5\textwidth}
+    {\fontsize{22pt}{24pt}\selectfont\bfseries SUDIPTA BANIK}
+\end{minipage}%
+\begin{minipage}[c]{0.5\textwidth}
+    \raggedleft
     \small
-    +91 9051073567 | sudiptabanik.dev@gmail.com \\ \vspace{3pt}
-    \href{https://linkedin.com/in/sudipta-banik}{linkedin.com/in/sudipta-banik}
-    \vspace{3pt}
-\end{center}
+    +91 9051073567 \\
+    \href{mailto:sudiptabanik.dev@gmail.com}{\textbf{sudiptabanik.dev@gmail.com}} \\
+    \href{https://linkedin.com/in/sudipta-banik}{\textbf{linkedin.com/in/sudipta-banik}}
+\end{minipage}
+\vspace{6pt}
 
 % --- SUMMARY ---
 \section{Summary}
 \begin{justify}
-Senior Software Engineer (Backend) with 6.5+ years of experience designing, architecting, and operating high-scale distributed systems in Go and Java for global platforms including Uber, Grab, and FourKites. At Uber, I led strategic initiatives in cluster fault isolation and system reliability, directly enhancing operational resilience, reducing incident recovery times to under a minute, and improving scheduling logic. During my tenure at Grab, I engineered pan-Southeast Asian financial lending systems processing millions of transactions, optimizing API performance while upholding TDD and clean code standards. My work at FourKites involved taking full ownership of B2B shipment tracking challenges and architecting scalable data pipelines that mitigated single-provider dependencies and significantly reduced operational costs. Proficient in Docker, Linux, Kubernetes, Kafka, MySQL, and Redis, I bring extensive experience collaborating across international, distributed teams to deliver and maintain business-critical infrastructure at scale.
+Senior Software Engineer with 6+ years designing and operating high-scale distributed systems and event-driven backends at Uber, Grab, and FourKites. Specialized in Go and Java microservices across job execution systems, financial lending platforms, and real-time data pipelines. Proven track record of owning complex cross-team initiatives end to end, from system design to production, with consistent focus on reliability, latency, and measurable business impact. Seeking roles in complex high-scale backend systems, with strong interest in data-intensive and LLM powered products.
 
 \end{justify}
 
@@ -75,22 +79,20 @@ Senior Software Engineer (Backend) with 6.5+ years of experience designing, arch
 \companyheader{UBER}
 
 \roleblock
-{Software Engineer (L4)}
+{Software Engineer II}
 {Oct 2024 -- Present}
 {Batch Compute Team}
 {Bangalore, India}
 {
-    \item \textbf{Automated cluster fault isolation:} Implemented circuit breakers and retries on the Apache YARN Router using Resilience4j, isolating failing clusters, reducing incident MTTR to under 60 seconds, and lowering the risk of widespread service disruptions.
+    \item Designed and implemented \textbf{automated fault isolation} for apache distributed job execution system using \textbf{circuit breakers and adaptive retries, reducing incident MTTR to under 60 seconds} and preventing cascading failures across downstream services.
 
-    \item \textbf{Kubernetes admission controls:} Built a ConfigMap-driven admission policy to block low-tier apps during outages, protecting capacity for high-priority workloads (blocked $\approx 7\%$ of total concurrent volume).
-    
-    \item \textbf{Apache YARN scheduling stability:} Improved by removing cluster-dependent application ID generation, centralising ID creation in the Router, and enforcing submission-time ordering, reducing out-of-order allocation delays by $\approx 20$ seconds in small clusters.
+    \item Built a dynamic workload admission control service to protect high-priority jobs during system stress, leveraging Kubernetes ConfigMaps for real-time policy propagation — blocking $\approx 7\%$ of total concurrent job volume.
 
-    \item \textbf{Cluster federation incident control:} Addressed slow and risky recovery from failing sub-clusters by building a YARN Router federation CLI with ZooKeeper-backed runtime state, enabling rapid detachment, blocking unhealthy RPCs, and containing incident blast radius.
+    \item Improved job scheduling correctness in a distributed execution engine by centralizing ID generation and enforcing submission-time ordering, \textbf{eliminating allocation delays of up to 20 seconds} for ML and data workloads.
 
-    \item \textbf{Mitigated host instability:} Analyzed and optimized YARN host memory requirements, effectively preventing Out of Memory (OOM) errors and enhancing the stability of the Apache YARN cluster during high-memory workloads.
+    \item Developed a ZooKeeper-backed federation controller for the YARN Router, enabling quick cluster isolation and re-attachment to \textbf{maintain system SLA} during system outages.
 
-    \item \textbf{Improved K8s operational visibility:} Enhanced Uber's Kubernetes batch job dashboard with job-id search and resource-usage visualization, reducing incident triage time.
+    \item Enhanced Uber's internal Kubernetes batch job observability dashboard with workload-type and job-ID search, and a resource-usage heatmap - Improving on-call debuggability and reducing time-to-insight during incidents.
 }
 
 \vspace{2pt}
@@ -98,39 +100,37 @@ Senior Software Engineer (Backend) with 6.5+ years of experience designing, arch
 \companyheader{GRAB}
 
 \roleblock
-{Senior Software Engineer (Fintech)}
+{Senior Software Engineer}
 {Aug 2023 -- Oct 2024}
-{Lending Core Team}
+{Lending Core Team, Fintech}
 {Bangalore, India}
 {
-    \item Contributed to redesigning the loan eligibility processing engine from a monthly batch process to an \textbf{event-driven system triggered by real-time driver activity}. This \textbf{eliminated data lag} and \textbf{redistributed the database processing load for millions of drivers by $\approx 30\%$, increasing loan product adoption}.
+    \item Contributed to designing loan offer and credit limit generation from a monthly batch to real-time event-driven processing, reducing DB load by $\approx 30\%$ across millions of drivers and increasing loan product adoption.
     
-    \item Optimized loan creation API performance by implementing \textbf{MySQL batch inserts} for instalment processing, \textbf{reducing p95 latency by almost 32\%}. The reduction in network round-trips and lock acquisitions \textbf{improved throughput during high-concurrency database writes}. 
+    \item Reduced loan creation API p95 latency by almost 32\% via \textbf{MySQL batch inserts} for instalment. The reduction in network round-trips and lock acquisitions \textbf{improved throughput during high-concurrency database writes}. 
 
-    \item Developed a new \textbf{scalable data aggregator} consuming 5+ internal APIs to facilitate banking partnerships; optimized for \textbf{sub-second latency} and implemented \textbf{partial response logic} to ensure \textbf{high system availability}.
+    \item Developed a \textbf{sub-second data aggregator API} integrating 5+ internal APIs for banking partners; with \textbf{partial response fallback for high availability}.
 
-    \item Enhanced the Go Kafka message retry framework by enabling message re-queuing for reprocessing during application shutdowns, reducing message loss incidents to near zero and improving system reliability.
+    \item Improved Kafka consumer framework reliability via graceful shutdown re-queuing, reducing message loss to near zero across financial transaction pipelines.
     
-    \item Mentored 2 new hires, accelerating onboarding and reducing ramp-up time.
+    \item Mentored 2 new engineers through onboarding, maintaining team velocity during hiring season.
 }
 
 \roleblock
 {Software Engineer}
 {Oct 2021 -- Aug 2023}
-{PayLater Team}
+{PayLater Team, Fintech}
 {Bangalore, India}
 {
-    \item Faced with the need to support Grab's expansion into Indonesia, designed and scaled the \textbf{BNPL Refund API} to handle 10\% of the country's user base at launch. Introduced \textbf{idempotent design and state machine logic}, automating error recovery and complex refund flows, which improved reliability and user satisfaction.
+    \item For Grab's Indonesia PayLater launch, I designed and scaled the \textbf{Refund API} to handle 10\% of the countries user base. Used \textbf{idempotent and state machine design patterns}, automating retries, error recovery and complex refund flows, which handled 3M+ users gracefully.
 
-    \item Developed a \textbf{tiered service fee engine} for the Indonesia BNPL rollout. Orchestrated changes across \textbf{real-time Charge APIs and batch billing systems to calculate usage-based fees} according to the country's regulatory requirements. Integrated \textbf{slab-rate logic} and ensured fee charges during initial monthly transaction.
+    \item Built a \textbf{tiered service fee module for real-time charge APIs and batch billing systems}, implementing slab-rate logic per Indonesian regulatory requirements.
 
-    \item Designed and delivered a configurable credit risk checker module, collaborating with product management and external credit bureaus to integrate country-specific requirements and ensure regulatory compliance.
+    \item Designed a configurable credit risk assessment module, \textbf{collaborating with product teams and external credit bureaus} to integrate country-specific requirements across \textbf{multiple Southeast Asian markets}.
 
-    \item Designed and implemented a \textbf{robust lending credit score API}, integrating data from multiple internal services. Drove discussions with internal data-science team and product teams, ensuring \textbf{adherence to API design and security best practices}.
+    \item Designed and implemented a \textbf{robust lending credit score API}, integrating score from data-science team models and user metadata teams, ensuring \textbf{adherence to REST API design and security best practices}.
 
-    \item Collaborated in cross-service \textbf{technical debt reduction}, including a Go version migration and \textbf{full go mod adoption}. Improved \textbf{build pipeline speeds by 18\%} and \textbf{reduced container image sizes}. Executed a comprehensive refactor that \textbf{increased unit test coverage by 20\%} and ensured strict \textbf{clean-code adherence}.
-    
-    \item Recognized with \textbf{``The Grab Way Award'' in 2023} for leading engineering improvements in the BNPL project, which enhanced system reliability and supported business growth.
+    \item Improved CI/CD build speeds by $\approx 18\%$ and increased unit test coverage by $\approx 35\%$ through Go version migration, go mod adoption, and systematic refactoring following clean code adherence and dependency inversions.
 }
 
 \vspace{2pt}
@@ -143,15 +143,15 @@ Senior Software Engineer (Backend) with 6.5+ years of experience designing, arch
 {Multimodal Supply Chain Visibility Team}
 {Chennai, India}
 {
-    \item \textbf{Architected and implemented a scalable API response caching system} using Redis to enable direct integration with 8+ global maritime carriers, reducing reliance on costly third party data providers. Designed carrier specific caching to comply with API rate limits, and built end-to-end data collection and update flows to ensure timely and cost effective shipment tracking.
+    \item Architected a \textbf{Redis-backed caching layer to enable direct integration} with 10+ global maritime carriers, reducing reliance on costly third-party data providers. Designed carrier-specific configs to comply with \textbf{API rate limits and built end-to-end data parsers and update flows} — later adopted by rail and air teams. \textbf{Guided an intern through task delegation to fast-track delivery}.
 
-    \item Resolved search disruptions by replacing a shared Elasticsearch dependency with a specialized Port Autocomplete API; utilized \textbf{composite indexing and in-memory caching} for 80,000+ ports to achieve \textbf{sub-100\,ms latency and operational independence}.
+    \item Resolved search disruptions by replacing a shared Elasticsearch dependency with a dedicated Port Autocomplete API; utilized \textbf{composite indexing and in-memory caching} for 80,000+ ports to achieve \textbf{sub-100\,ms latency and operational independence}.
 
-    \item \textbf{Designed an asynchronous Kafka-based pipeline} to enrich maritime ETD events by \textbf{integrating distributed microservices into a unified callback payload}, decoupling ingestion from enrichment to ensure \textbf{high-throughput delivery of real-time shipment updates}.
+    \item \textbf{Designed an async Kafka-based maritime event enrichment pipeline} for ETA/ETD updates by \textbf{integrating data from multiple internal microservices} into a unified callback payload — ensuring event persistence, configurability, and reliable real-time shipment update delivery to customers.
 
-    \item Identified inefficiencies in QA testing and led the development of an internal tool for creating shipment tracking events, mentoring an intern in the process. This reduced tracking event testing time significantly and improved QA productivity.
+    \item Eliminated error-prone QA processes by replacing SSH-based Ruby script execution with an \textbf{internal shipment event simulation tool} — dropdown-driven UI, event-specific data fields, and background worker integration. Delegated frontend tasks to an intern to fast-track delivery.
 
-    \item \textbf{Integrated ocean specific features into common shipment cloning module} to streamline new client demonstrations. This enhancement enabled tailored, \textbf{domain specific data replication}, improving the \textbf{accuracy and impact of the sales demos}.
+    \item Added ocean-specific features to the shipment cloning module, enabling \textbf{domain-specific data replication that improved accuracy and impact} of new client sales demos.
 }
 
 % --- EDUCATION ---
@@ -164,11 +164,18 @@ Senior Software Engineer (Backend) with 6.5+ years of experience designing, arch
 % --- SKILLS ---
 \section{Technical Skills}
 \begin{itemize}[leftmargin=*, noitemsep, parsep=2pt, itemsep=2pt]
-    \item \textbf{Languages:} Go, Java, SQL, Python, C++
+    \item \textbf{Languages:} Go/Golang, Java, SQL, Python, C++
     \item \textbf{Distributed Systems \& Infrastructure:} Kubernetes (K8s), Apache YARN, Docker, AWS, GCP
     \item \textbf{Data Management \& Streaming:} Kafka, Redis, Aerospike, PostgreSQL, MySQL
-    \item \textbf{Frameworks \& Tools:} Spring Boot, Datadog, Jenkins, Git
+    \item \textbf{Frameworks \& Tools:} Spring Boot, Datadog, Jenkins, Git, CI/CD
 \end{itemize}
+
+% --- PROJECTS ---
+\section{Projects}
+
+\noindent\textbf{Travelling Thief Problem} \hfill \textit{2018} \\
+Explored metaheuristic approaches to approximate solutions for the Travelling Thief Problem, a composite NP-hard problem coupling TSP and 0/1 knapsack selection implemented in MATLAB, under the guidance of professor at Indian Statistical Institute, Kolkata.
+\hfill \href{https://github.com/baniksudipta/ttp_project}{\textit{Source: github.com/baniksudipta/ttp\_project}}
 
 % --- LANGUAGES ---
 \section{Languages}
