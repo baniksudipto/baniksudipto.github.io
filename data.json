@@ -1,73 +1,12 @@
 {
-  "About": [
-    "Hi, my name is Sudipta Banik. I'm a Software Engineer experienced in microservices architecture and distributed systems. I enjoy solving problems, building scalable services, and learning new technologies.",
-    {
-      "link": "resume.html",
-      "linkText": "Download Resume"
-    }
-  ],
-  "Skills": [
-    "Microservices & Distributed Systems",
-    "Node.js / Express",
-    "Java / Spring Boot",
-    "Python",
-    "REST & gRPC",
-    "Docker / Kubernetes",
-    "SQL & NoSQL (Postgres, MongoDB)",
-    "React / Frontend basics",
-    "Algorithms & Data Structures",
-    "CI/CD & DevOps basics"
-  ],
-  "Roles": {
-    "Uber": {
-      "role": "Senior Software Engineer (placeholder)",
-      "location": "Bengaluru, India",
-      "period": "Jan 2018 - May 2019",
-      "highlights": [
-        "Worked on routing and mapping services",
-        "Improved latency for key microservices",
-        "Collaborated across teams on reliability improvements"
-      ]
-    },
-    "Grab": {
-      "role": "Software Engineer (placeholder)",
-      "location": "Singapore",
-      "period": "Jun 2016 - Dec 2017",
-      "highlights": [
-        "Built internal APIs for payments",
-        "Implemented monitoring and alerting",
-        "Reduced deployment times via CI enhancements"
-      ]
-    },
-    "Fourkites": {
-      "role": "Software Engineer",
-      "location": "Chennai, India",
-      "period": "Jun 2019 - Present",
-      "highlights": [
-        "Designed and implemented microservices for supply chain workloads",
-        "Owned features end-to-end from design to production",
-        "Mentored interns and junior engineers"
-      ]
-    }
-  },
-  "Education": {
-    "Under Graduate": {
-      "timeText": "Jadavpur University (B.E. in Electrical Engineering)",
-      "timeline": "<h4>2015 - 2019</h4>"
-    }
-  },
   "Contact": {
     "linkedin": {
       "link": "https://www.linkedin.com/in/sudipta-banik/",
       "linkText": "sudipta-banik"
     },
-    "email id": {
-      "link": "mailto:sudiptabanik112@gmail.com",
-      "linkText": "sudiptabanik112@gmail.com"
-    },
     "codechef": {
-      "link": "https://www.codechef.com/users/baniksudipto",
-      "linkText": "baniksudipto"
+      "link": "https://www.codechef.com/users/baniksudipta",
+      "linkText": "baniksudipta"
     },
     "codeforces": {
       "link": "https://codeforces.com/profile/sdpt131",
@@ -78,13 +17,6 @@
       "linkText": "sdpt_banik"
     }
   },
-  "Interests": [
-    "Algorithms & Data Structures",
-    "Competitive Programming",
-    "Web Development",
-    "Software Design Patterns",
-    "Linux"
-  ],
   "Hobbies": [
     "Music & Instruments", "Astronomy", "Travelling", "Coin Collection"
   ]

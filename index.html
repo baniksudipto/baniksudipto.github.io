@@ -27,10 +27,10 @@
     <section class="hero">
       <div class="hero-bg" aria-hidden="true"></div>
       <div class="container">
-        <h1><span style="color: #333;">Hello! </span><br><span class="name-highlight">I'm Sudipta Banik</span></h1>
-        <p class="lead" style="color: #444; font-weight: 500;">I'm a backend-focused Software Engineer with 6+ years of experience in Go and Java, including full-stack exposure for internal tooling. Specialized in high-scale Platform Infrastructure (Apache YARN, K8s) and product ecosystems (Lending & Payments). Proven expertise in distributed systems, event-driven architectures, and infrastructure optimization at global scale.</p>
+        <h1><span style="color: #333;">Hello! </span><br><span class="name-highlight">I'm Sudipta</span></h1>
+        <p class="lead" style="color: #444; font-weight: 500;">I'm a backend-focused Software Engineer  specializing in distributed systems and event-driven backends. I've built high-scale financial and logistics platforms at Uber, Grab, and FourKites.</p>
         <div class="hero-actions">
-          <a class="btn btn-ghost" href="sudipta_banik_software_engineer_resume.pdf" target="_blank" rel="noopener" role="menuitem">View Resume</a>
+          <a class="btn btn-ghost" href="./sudipta_banik_software_engineer_resume.pdf" target="_blank" rel="noopener" role="menuitem">View Resume</a>
         </div>
       </div>
     </section>
@@ -69,53 +69,23 @@
       <div class="container">
         <h2>Work Experience</h2>
         <div class="block_item uber">
-          <h3>Uber — Software Engineer (L4) - Batch Compute Team</h3>
+          <h3>Uber — Software Engineer-II - Batch Compute Team</h3>
           <p class="role-meta">Oct 2024 – Present</p>
-          <ul>
-            <li><strong>Automated cluster fault isolation:</strong> Implemented a Resilience4j layer on the Apache YARN Router with per-cluster circuit breakers and retries, reducing manual incident MTTR from ~15 minutes to under 60 seconds.</li>
-            <li><strong>Kubernetes admission controls:</strong> Built a ConfigMap-driven admission policy to block low-tier apps during outages, protecting capacity for high-priority workloads (blocked ~7% of concurrent volume).</li>
-            <li><strong>Apache YARN scheduling improvements:</strong> Moved application-id generation to the YARN Router and enforced submission time based ordering, reducing scheduling out-of-order delays by ~20s in smaller clusters.</li>
-            <li><strong>Cluster federation management CLI:</strong> Built an Apache YARN router federation CLI command with Zookeeper-backed runtime state to instantly detach problematic sub-clusters and contain incident blast radius.</li>
-            <li><strong>Mitigated host instability:</strong> Implemented strict memory reservations for critical host agents to prevent OOM kills during heavy memory-load from Apache YARN jobs.</li>
-            <li><strong>Improved K8s operational visibility:</strong> Enhanced the internal application listing with job-id search and resource-usage shading, reducing operator time-to-debug.</li>
-          </ul>
         </div>
 
         <div class="block_item grab">
           <h3>Grab — Senior Software Engineer (Lending Core Team)</h3>
           <p class="role-meta">Aug 2023 – Oct 2024</p>
-          <ul>
-            <li>Contributed to redesigning the loan eligibility processing engine from a bi-weekly batch process to an <strong>event-driven system triggered by real-time driver activity</strong>. This <strong>eliminated data lag</strong> and <strong>redistributed the processing load for millions of drivers across five markets, reducing peak database demand by approximately 30%</strong>.</li>
-            <li>Optimized loan creation API performance by implementing <strong>MySQL batch inserts</strong> for instalment processing, <strong>reducing p95 latency by 40%</strong>. The reduction in network round-trips and lock acquisitions improved throughput during high-concurrency database writes.</li>
-            <li>Developed a <strong>scalable data aggregator</strong> consuming 5+ internal APIs to facilitate banking partnerships; optimized for <strong>sub-second latency</strong> and implemented <strong>partial response logic</strong> to ensure high system availability.</li>
-            <li>Enhanced an internal <strong>retry framework</strong> built on top of a Kafka connector, enabling <strong>message re-queuing for reprocessing</strong> during application shut-down to prevent data loss.</li>
-            <li>Mentorship: Facilitated <strong>codebase deep-dives and technical onboarding</strong> for new hires to accelerate team integration.</li>
-          </ul>
         </div>
 
         <div class="block_item grab">
           <h3>Grab — Software Engineer (PayLater Team)</h3>
           <p class="role-meta">Oct 2021 – Aug 2023</p>
-          <ul>
-            <li>Designed the <strong>BNPL Refund API</strong> to support Grab's expansion into Indonesia. Successfully <strong>scaled the service to 10% of the country's user base</strong> during the initial launch phase. Integrated <strong>idempotent design and state machine logic</strong> to automate error recovery and complex refund flows.</li>
-            <li>Developed a <strong>tiered service fee engine</strong> for the Indonesia BNPL rollout. Orchestrated changes across <strong>real-time Charge APIs and batch billing systems</strong> to calculate usage-based fees and integrated <strong>slab-rate logic</strong>.</li>
-            <li>Created <strong>low-level design for a credit risk checker module</strong>, featuring configurability and developed an API client for <strong>country specific credit bureau integration</strong>.</li>
-            <li>Designed and implemented a <strong>robust lending credit score API</strong>, integrating data from multiple internal services. Drove discussions with internal data-science team and product teams.</li>
-            <li>Collaborated in cross-service <strong>technical debt reduction</strong>, including a Go version migration and <strong>full go mod adoption</strong>. Improved <strong>build pipeline speeds by 18%</strong> and <strong>reduced container image sizes</strong>. Executed a comprehensive refactor that <strong>increased unit test coverage by 20%</strong>.</li>
-            <li>Awarded <strong>"The Grab Way Award" in 2023</strong> for engineering excellence in BNPL project.</li>
-          </ul>
         </div>
 
         <div class="block_item fourkites">
           <h3>Fourkites Inc. — Software Engineer (Multimodal Supply Chain Visibility)</h3>
           <p class="role-meta">Jun 2019 – Oct 2021</p>
-          <ul>
-            <li><strong>Designed and implemented a scalable API response caching system</strong> for generic tracking data, utilising <strong>Redis to efficiently store and retrieve responses for 50,000+ ocean shipments</strong> across 10+ ocean carriers. Successfully containerized, deployed, and tested the system. Later adopted by rail and air shipment teams.</li>
-            <li><strong>Designed an asynchronous Kafka-based pipeline</strong> to enrich maritime ETD events by <strong>integrating distributed microservices into a unified callback payload</strong>, decoupling ingestion from enrichment to ensure high-throughput delivery of real-time shipment updates.</li>
-            <li><strong>Port Address Autocomplete API:</strong> Developed global port autocomplete APIs using <strong>composite indexing</strong> on various granularity levels to achieve <strong>sub-second search response times</strong>.</li>
-            <li><strong>Conceptualized and oversaw the development of an internal tool</strong> for creating shipment tracking events, mentoring an intern, and boosting QA productivity. Reducing tracking event testing time by ~20mins.</li>
-            <li><strong>Integrated ocean-specific features into common shipment cloning module</strong> to streamline new client demonstrations. This enhancement enabled tailored, domain-specific data replication, improving the accuracy and impact of the sales engineering process.</li>
-          </ul>
         </div>
       </div>
     </section> 
@@ -137,7 +107,12 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <div>© <span id="year"></span> Sudipta Banik</div>
-      <div class="footer-links"><a href="https://github.com/baniksudipto" target="_blank">GitHub</a> · <a href="mailto:sudiptabanik112@gmail.com">Email</a></div>
+      <div class="footer-links">
+        <a href="https://github.com/baniksudipta" target="_blank">GitHub - baniksudipta</a> · 
+        <a href="mailto:sudiptabanik.dev@gmail.com">Email - sudiptabanik.dev@gmail.com</a> .
+        <a href="https://linkedin.com/in/sudipta-banik">LinkedIn</a>
+      
+      </div>
     </div>
   </footer>
 
