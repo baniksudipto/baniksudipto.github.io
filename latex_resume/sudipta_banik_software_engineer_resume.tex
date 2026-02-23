@@ -8,6 +8,7 @@
 \usepackage{enumitem}
 \usepackage{titlesec}
 \usepackage{xcolor}
+\definecolor{rulegray}{gray}{0.6}
 
 \usepackage{microtype}
 \usepackage{ragged2e}
@@ -17,17 +18,16 @@
 
 \pretolerance=1000
 \tolerance=2000
-\emergencystretch=4em
+\emergencystretch=2em
 \pagenumbering{gobble}
 
 
 % --- Layout Setup ---
 \setlength{\parindent}{0pt}
 % --- Custom Commands ---
-
-\usepackage{titlesec}
-\titleformat{\section}
-{\large\bfseries\uppercase}{}{0em}{\vspace{3pt}}[\color{gray!40}\titlerule]
+\titleformat{\section}[block]
+{\large\bfseries}
+{}{0em}{\MakeUppercase}[\color{rulegray}\titlerule]
 \titlespacing{\section}{0pt}{12pt}{6pt}
 
 % --- Company Header ---
@@ -54,22 +54,20 @@
 \begin{document}
 
 % --- HEADER ---
-\begin{minipage}[c]{0.5\textwidth}
-    {\fontsize{22pt}{24pt}\selectfont\bfseries SUDIPTA BANIK}
-\end{minipage}%
-\begin{minipage}[c]{0.5\textwidth}
-    \raggedleft
+\begin{center}
+    {\fontsize{22pt}{24pt}\selectfont\bfseries SUDIPTA BANIK}\\[7pt]
     \small
-    +91 9051073567 \\
-    \href{mailto:sudiptabanik.dev@gmail.com}{\textbf{sudiptabanik.dev@gmail.com}} \\
-    \href{https://linkedin.com/in/sudipta-banik}{\textbf{linkedin.com/in/sudipta-banik}}
-\end{minipage}
-\vspace{6pt}
+    +91 9051073567 \quad|\quad
+    \href{mailto:sudiptabanik.dev@gmail.com}{sudiptabanik.dev@gmail.com} \quad|\quad
+    \href{https://linkedin.com/in/sudipta-banik}{linkedin.com/in/sudipta-banik} \quad|\quad
+    Bangalore, India
+\end{center}
+\vspace{4pt}
 
 % --- SUMMARY ---
 \section{Summary}
 \begin{justify}
-Senior Software Engineer with 6+ years designing and operating high-scale distributed systems and event-driven backends at Uber, Grab, and FourKites. Specialized in Go and Java microservices across job execution systems, financial lending platforms, and real-time data pipelines. Proven track record of owning complex cross-team initiatives end to end, from system design to production, with consistent focus on reliability, latency, and measurable business impact.
+Senior Software Engineer with 6+ years designing and operating high-scale distributed systems and \mbox{event-driven} backends at Uber, Grab, and FourKites. Specialized in Go and Java microservices across job execution systems, financial lending platforms, and real-time data pipelines. Proven track record of owning complex \mbox{cross-team} initiatives end to end, from system design to production, with consistent focus on reliability, latency, and measurable business impact.
 \end{justify}
 
 % --- EXPERIENCE ---
@@ -83,18 +81,18 @@ Senior Software Engineer with 6+ years designing and operating high-scale distri
 {Batch Compute Team}
 {Bangalore, India}
 {
-    \item Designed and implemented \textbf{automated fault isolation} for apache distributed job execution system using \textbf{circuit breakers and adaptive retries, reducing incident MTTR to under 60 seconds} and preventing cascading failures across downstream services.
+    \item Designed and implemented \textbf{automated fault isolation} for Apache distributed job execution system using \textbf{circuit breakers and adaptive retries, reducing incident Mean Time To Resolve (MTTR) to under 60 seconds} and preventing cascading failures across downstream services.
 
-    \item Built a dynamic workload admission control service to protect high-priority jobs during system stress, leveraging Kubernetes ConfigMaps for real-time policy propagation — blocking $\approx 7\%$ of total concurrent job volume.
+    \item Built a dynamic workload admission control service to protect high-priority jobs during system stress, leveraging Kubernetes ConfigMaps for real-time policy propagation — blocking \textasciitilde7\% of total concurrent job volume.
 
     \item Improved job scheduling correctness in a distributed execution engine by centralizing ID generation and enforcing submission-time ordering, \textbf{eliminating allocation delays of up to 20 seconds} for ML and data workloads.
 
-    \item Developed a ZooKeeper-backed federation controller for the YARN Router, enabling quick cluster isolation and re-attachment to \textbf{maintain system SLA} during system outages.
+    \item Developed a ZooKeeper-backed federation controller for the Yet Another Resource Negotiator (YARN) Router, enabling quick cluster isolation and re-attachment to \textbf{maintain system Service Level Agreement (SLA)} during system outages.
 
     \item Enhanced Uber's internal Kubernetes batch job observability dashboard with workload-type and job-ID search, and a resource-usage heatmap - \textbf{Improving on-call debuggability} and reducing time-to-insight during incidents.
 }
 
-\vspace{2pt}
+\vspace{4pt}
 
 \companyheader{GRAB}
 
@@ -104,7 +102,7 @@ Senior Software Engineer with 6+ years designing and operating high-scale distri
 {Lending Core Team, Fintech}
 {Bangalore, India}
 {
-    \item Contributed to re-designing the loan offer and credit limit generation from a \textbf{monthly batch to real-time event-driven processing}, reducing DB load by $\approx 30\%$ across \textbf{millions of drivers} and increasing loan product adoption.
+    \item Contributed to re-designing the loan offer and credit limit generation from a \textbf{monthly batch to real-time event-driven processing}, reducing DB load by \textasciitilde30\% across \textbf{millions of drivers} and increasing loan product adoption.
     
     \item Reduced loan creation API p95 latency by almost 32\% via \textbf{MySQL batch inserts} for instalment. The reduction in network round-trips and lock acquisitions \textbf{improved throughput during high-concurrency database writes}. 
 
@@ -114,6 +112,7 @@ Senior Software Engineer with 6+ years designing and operating high-scale distri
     
     \item \textbf{Mentored 2 new engineers through onboarding}, maintaining team velocity during hiring season.
 }
+\vspace{4pt}
 
 \roleblock
 {Software Engineer}
@@ -121,7 +120,7 @@ Senior Software Engineer with 6+ years designing and operating high-scale distri
 {PayLater Team, Fintech}
 {Bangalore, India}
 {
-    \item For Grab's Indonesia PayLater launch, I \textbf{designed and scaled} the \textbf{Refund API} to handle 10\% of the countries user base. Used \textbf{idempotent and state machine design patterns}, automating retries, error recovery and complex refund flows, which handled 3M+ users gracefully.
+    \item For Grab's Indonesia PayLater launch, \textbf{designed and scaled} the \textbf{Refund API} to handle 10\% of the country's user base. Used \textbf{idempotent and state machine design patterns}, automating retries, error recovery and complex refund flows, which handled 3M+ users gracefully.
 
     \item Built a \textbf{tiered service fee module for real-time charge APIs and batch billing systems}, implementing slab-rate logic per Indonesian regulatory requirements.
 
@@ -129,10 +128,10 @@ Senior Software Engineer with 6+ years designing and operating high-scale distri
 
     \item Designed and implemented a \textbf{robust lending credit score API}, integrating score from data-science team models and user metadata teams, ensuring \textbf{adherence to REST API design and security best practices}.
 
-    \item Improved CI/CD build speeds by $\approx 18\%$ and increased unit test coverage by $\approx 35\%$ through Go version migration, go mod adoption, and systematic refactoring following \textbf{clean code adherence and dependency inversions}.
+    \item Improved CI/CD build speeds by \textasciitilde18\% and increased unit test coverage by \textasciitilde35\% through Go version migration, go mod adoption, and systematic refactoring following \textbf{clean code adherence and dependency inversions}.
 }
 
-\vspace{2pt}
+\vspace{4pt}
 
 \companyheader{FOURKITES INC.}
 
@@ -144,7 +143,7 @@ Senior Software Engineer with 6+ years designing and operating high-scale distri
 {
     \item Architected a \textbf{Redis-backed caching layer to enable direct integration} with 10+ global maritime carriers, reducing reliance on costly third-party data providers. Designed carrier-specific configs to comply with \textbf{API rate limits and built end-to-end data parsers and update flows} — later adopted by rail and air teams. \textbf{Guided an intern through task delegation to fast-track delivery}.
 
-    \item Resolved search disruptions by replacing a shared Elasticsearch dependency with a dedicated Port Autocomplete API; utilized \textbf{composite indexing and in-memory caching} for 80,000+ ports to achieve \textbf{sub-100\,ms latency and operational independence}.
+    \item Resolved search disruptions by replacing a shared Elasticsearch dependency with a dedicated Port Autocomplete API; utilized \textbf{composite indexing and in-memory caching} for 80,000+ ports to achieve \textbf{sub-100ms latency and operational independence}.
 
     \item \textbf{Designed an async Kafka-based maritime event enrichment pipeline} for ETA/ETD updates by \textbf{integrating data from multiple internal microservices} into a unified callback payload — ensuring event persistence, configurability, and reliable real-time shipment update delivery to customers.
 
@@ -152,6 +151,8 @@ Senior Software Engineer with 6+ years designing and operating high-scale distri
 
     \item Added ocean-specific features to the shipment cloning module, enabling \textbf{domain-specific data replication that improved accuracy and impact} of new client sales demos.
 }
+
+\vspace{4pt}
 
 % --- EDUCATION ---
 \section{Education}
@@ -163,7 +164,7 @@ Senior Software Engineer with 6+ years designing and operating high-scale distri
 % --- SKILLS ---
 \section{Technical Skills}
 \begin{itemize}[leftmargin=*, noitemsep, parsep=2pt, itemsep=2pt]
-    \item \textbf{Languages:} Go/Golang, Java, SQL, Python, C++
+    \item \textbf{Languages:} Go (Golang), Java, SQL, Python, C++
     \item \textbf{Distributed Systems \& Infrastructure:} Kubernetes (K8s), Apache YARN, Docker, AWS, GCP, Linux
     \item \textbf{Data Management \& Streaming:} Kafka, Redis, Aerospike, PostgreSQL, MySQL
     \item \textbf{Frameworks \& Tools:} Spring Boot, Datadog, Jenkins, Git, CI/CD
@@ -171,7 +172,7 @@ Senior Software Engineer with 6+ years designing and operating high-scale distri
 
 \section{Achievements}
 \begin{itemize}[leftmargin=*, noitemsep, topsep=1pt, label={\small\textbullet}]
-    \item \textbf{The Grab Way Award (Q1 2023)} — Recognized for leading engineering improvements in the BNPL project, enhancing system reliability and supporting business growth.
+    \item \textbf{The Grab Way Award (Q1 2023)} — Recognized for leading engineering improvements in the Buy Now Pay Later (BNPL) project, enhancing system reliability and supporting business growth.
 \end{itemize}
 
 % --- PROJECTS ---
