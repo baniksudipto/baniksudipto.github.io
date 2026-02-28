@@ -1,0 +1,106 @@
+                                        SUDIPTA BANIK
+     +91 9051073567      |   sudiptabanik.dev@gmail.com   |   linkedin.com/in/sudipta-banik   |   Bangalore, India
+
+
+
+SUMMARY
+Software Engineer with 6.5 years of experience at Uber, Grab, and FourKites specializing in high-scale distributed
+systems and event-driven backends. Expert in Go, Java, and Kafka across job execution, ﬁntech, and logistics
+domains. Holder of a Bachelor of Engineering in Electrical Engineering from Jadavpur University. Open to
+relocation.
+
+WORK EXPERIENCE
+
+UBER
+Software Engineer II                                                                              Oct 2024 – Present
+Batch Compute Team                                                                                  Bangalore, India
+• Designed and implemented automated fault isolation for Apache distributed job execution system using
+  circuit breakers and adaptive retries, reducing incident Mean Time To Resolve (MTTR) to under 60 seconds
+  and preventing cascading failures across downstream services.
+• Built a dynamic workload admission control service to protect high-priority jobs during system outages,
+  leveraging Kubernetes ConﬁgMaps for real-time policy propagation and blocking ~7% of total ~400K+
+  concurrent job volume.
+• Improved job scheduling correctness in a distributed execution engine by centralizing ID generation and
+  enforcing submission-time ordering, eliminating allocation delays of up to 20 seconds for ML and data
+  workloads.
+• Developed a ZooKeeper-backed federation controller for the Apache YARN Router, enabling quick cluster
+  isolation and re-attachment to maintain system Service Level Agreement (SLA) during system outages.
+• Enhanced Uber’s internal Kubernetes batch job observability dashboard with workload-type and job-ID
+  search, and a resource-usage heatmap - Improving on-call debuggability and reducing time-to-insight during
+  incidents.
+
+GRAB
+Senior Software Engineer                                                                      Aug 2023 – Oct 2024
+Lending Core Team, Fintech                                                                         Bangalore, India
+• Redesigned the loan oﬀer and credit limit generation from a monthly batch job to real-time event-driven
+  processing using Kafka, reducing peak DB load by ~30% and reducing loan oﬀer waiting time for millions of
+  drivers.
+• Reduced loan creation API p95 latency by almost 32% via MySQL batch inserts for instalment. The
+  reduction in network round-trips and lock acquisitions improved throughput during high-concurrency
+  database writes.
+• Developed a sub-second data aggregator API integrating 5+ internal APIs for banking partners; with partial
+  response fallback for high availability.
+• Improved the internal Kafka consumer framework reliability via graceful shutdown re-queuing, reducing
+  message loss to near zero across ﬁnancial transaction pipelines.
+Software Engineer                                                                             Oct 2021 – Aug 2023
+PayLater Team, Fintech                                                                             Bangalore, India
+• For Grab’s Indonesia PayLater launch, designed and scaled the Refund API to handle 10% of the country’s
+  user base. Used idempotent and state machine design patterns, automating retries, error recovery and
+  complex refund ﬂows, which handled 3M+ users gracefully.
+• Built a tiered service fee module for real-time charge APIs and batch billing systems, implementing slab-
+  rate logic per Indonesian regulatory requirements.
+• Designed a conﬁgurable credit risk assessment module, collaborating with product teams and external
+  credit bureaus to integrate country-speciﬁc requirements across multiple Southeast Asian markets.
+• Developed a robust lending credit score API, integrating credit score from data-science team models and
+  user metadata services, ensuring adherence to REST API design and security best practices.
+• Improved CI/CD build speeds by ~18% and increased unit test coverage by ~35% through Go version
+  upgrade, glide to go mod adoption, and systematic refactoring following clean code adherence and
+  dependency inversions.
+
+FOURKITES INC.
+Software Engineer                                                                        Jun 2019 – Oct 2021
+Multimodal Supply Chain Visibility Team                                                        Chennai, India
+• Architected a Redis-backed caching layer to enable direct integration with 10+ global maritime carriers,
+  reducing reliance on costly third-party data providers. Designed carrier-speciﬁc conﬁgs to comply with
+  API rate limits and built end-to-end data parsers and update ﬂows, which was later adopted by rail and air
+  teams.
+• Mentored an intern on feature implementation and code review process for maritime integration module,
+  accelerating knowledge transfer and team productivity.
+• Improved global address search API availability by replacing a shared Elasticsearch dependency with a
+  dedicated Port Autocomplete API utilising composite SQL indexing and in-memory cache for 80,000+ ports
+  and achieved sub-100ms latency.
+• Designed an async Kafka-based maritime event enrichment pipeline for ETA/ETD updates by integrating
+  data from multiple internal microservices into a uniﬁed callback payload — ensuring event persistence,
+  conﬁgurability, and reliable real-time shipment update delivery to customers.
+• Eliminated error-prone QA processes by replacing SSH-based Ruby script execution with an internal
+  shipment event simulation tool with dropdown-driven UI, event-speciﬁc data ﬁelds, and background worker
+  integration. Delegated some tasks to an intern for their learning.
+• Added ocean-speciﬁc features to the shipment cloning module, enabling domain-speciﬁc data replication
+  that improved accuracy and impact of new client sales demos.
+
+EDUCATION
+Jadavpur University                                                                 Aug 2015 – May 2019
+Bachelor of Engineering in Electrical Engineering                                           Kolkata, India
+Relevant Coursework: C++, Data Structures & Algorithms, Computer Networks, Signals & Systems, Engineering
+Mathematics
+
+TECHNICAL SKILLS
+• Languages: Go (Golang), Java, Python, SQL, C++
+• Backend & API: REST, gRPC, Microservices, Event-Driven Architecture, Spring Boot
+• Messaging & Infrastructure: Apache Kafka, Kubernetes, Docker, Apache YARN, Linux
+• Databases & Caching: MySQL, PostgreSQL, Redis, Aerospike
+• Cloud & Observability: AWS, GCP, Datadog, Git, CI/CD
+
+ACHIEVEMENTS
+• The Grab Way Award (Q1 2023) — Recognized for leading engineering improvements in the Buy Now Pay
+  Later (BNPL) project, enhancing system reliability and supporting business growth.
+
+PROJECTS
+Travelling Thief Problem                                                                             2018
+Explored metaheuristic approaches to approximate solutions for the Travelling Thief Problem, a composite
+NP-hard problem coupling TSP and 0/1 knapsack selection implemented in MATLAB, under the guidance of
+professor at Indian Statistical Institute, Kolkata.             Source: github.com/baniksudipta/ttp_project
+
+LANGUAGES
+English: Full Professional Proﬁciency     Bengali: Native
+

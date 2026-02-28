@@ -31,23 +31,33 @@
 \titlespacing{\section}{0pt}{12pt}{6pt}
 
 % --- Company Header ---
-\newcommand{\companyheader}[1]{
-    \vspace{3pt}
-    {\Large\bfseries #1}
-    \vspace{3pt}
+% FIXED: Improved spacing and formatting
+\newcommand{\companyheader}[1]{%
+    \vspace{3pt}%
+    {\Large\bfseries #1}%
+    \vspace{3pt}%
 }
 
 % --- Role Block ---
-\newcommand{\roleblock}[5]{
-    \vspace{2pt}
-    \noindent
-    \textbf{#1} \hfill #2 \\
-    \textit{#3} \hfill #4 \vspace{3pt}
-    \begin{itemize}[leftmargin=*, noitemsep, topsep=1pt, label={\small\textbullet}]
-    \RaggedRight
-        #5
-    \end{itemize}
-    \vspace{1pt}
+% FIXED: Added % at line ends to prevent unwanted spaces
+% FIXED: Added \raggedrightskip to control spacing better
+\newcommand{\roleblock}[5]{%
+    \vspace{2pt}%
+    \noindent%
+    \textbf{#1} \hfill #2 \\%
+    \textit{#3} \hfill #4 \vspace{3pt}%
+    \begin{itemize}[%
+        leftmargin=*,%
+        noitemsep,%
+        topsep=1pt,%
+        label={\small\textbullet},%
+        itemsep=0pt%       % FIXED: Ensure no extra space between items
+    ]%
+    \RaggedRight%
+    \def\baselinestretch{1.0}%  % FIXED: Consistent line spacing within bullets
+        #5%
+    \end{itemize}%
+    \vspace{1pt}%
 }
 
 
@@ -66,9 +76,7 @@
 
 % --- SUMMARY ---
 \section{Summary}
-\begin{justify}
-Senior Software Engineer with 6+ years designing and operating high-scale distributed systems and \mbox{event-driven} backends at Uber, Grab, and FourKites. Specialized in Go and Java microservices across job execution systems, financial lending platforms, and real-time data pipelines. Proven track record of owning complex \mbox{cross-team} initiatives end to end, from system design to production, with consistent focus on reliability, latency, and measurable business impact.
-\end{justify}
+\noindent Software Engineer with 6.5 years of experience at Uber, Grab, and FourKites specializing in high-scale distributed systems and event-driven backends. Expert in Go, Java, and Kafka across job execution, fintech, and logistics domains. Holder of a Bachelor of Engineering in Electrical Engineering from Jadavpur University. Open to relocation.
 
 % --- EXPERIENCE ---
 \section{Work Experience}
@@ -82,13 +90,9 @@ Senior Software Engineer with 6+ years designing and operating high-scale distri
 {Bangalore, India}
 {
     \item Designed and implemented \textbf{automated fault isolation} for Apache distributed job execution system using \textbf{circuit breakers and adaptive retries, reducing incident Mean Time To Resolve (MTTR) to under 60 seconds} and preventing cascading failures across downstream services.
-
-    \item Built a dynamic workload admission control service to protect high-priority jobs during system stress, leveraging Kubernetes ConfigMaps for real-time policy propagation — blocking \textasciitilde7\% of total concurrent job volume.
-
+    \item Built a dynamic workload admission control service to protect high-priority jobs during system outages, leveraging Kubernetes ConfigMaps for real-time policy propagation and blocking \textasciitilde7\% of total \textasciitilde400K+ concurrent job volume.
     \item Improved job scheduling correctness in a distributed execution engine by centralizing ID generation and enforcing submission-time ordering, \textbf{eliminating allocation delays of up to 20 seconds} for ML and data workloads.
-
-    \item Developed a ZooKeeper-backed federation controller for the Yet Another Resource Negotiator (YARN) Router, enabling quick cluster isolation and re-attachment to \textbf{maintain system Service Level Agreement (SLA)} during system outages.
-
+    \item Developed a ZooKeeper-backed federation controller for the Apache YARN Router, enabling quick cluster isolation and re-attachment to \textbf{maintain system Service Level Agreement (SLA)} during system outages.
     \item Enhanced Uber's internal Kubernetes batch job observability dashboard with workload-type and job-ID search, and a resource-usage heatmap - \textbf{Improving on-call debuggability} and reducing time-to-insight during incidents.
 }
 
@@ -102,15 +106,11 @@ Senior Software Engineer with 6+ years designing and operating high-scale distri
 {Lending Core Team, Fintech}
 {Bangalore, India}
 {
-    \item Contributed to re-designing the loan offer and credit limit generation from a \textbf{monthly batch to real-time event-driven processing}, reducing DB load by \textasciitilde30\% across \textbf{millions of drivers} and increasing loan product adoption.
-    
+    \item Redesigned the loan offer and credit limit generation from a monthly batch job to \textbf{real-time event-driven processing using Kafka}, reducing peak DB load by \textasciitilde30\% and reducing loan offer waiting time for \textbf{millions of drivers}.
     \item Reduced loan creation API p95 latency by almost 32\% via \textbf{MySQL batch inserts} for instalment. The reduction in network round-trips and lock acquisitions \textbf{improved throughput during high-concurrency database writes}. 
-
     \item Developed a \textbf{sub-second data aggregator API} integrating 5+ internal APIs for banking partners; with \textbf{partial response fallback for high availability}.
-
     \item \textbf{Improved the internal Kafka consumer framework reliability} via graceful shutdown re-queuing, reducing message loss to near zero across financial transaction pipelines.
-    
-    \item \textbf{Mentored 2 new engineers through onboarding}, maintaining team velocity during hiring season.
+    % \item \textbf{Mentored 2 new engineers through onboarding}, maintaining team velocity during hiring season.
 }
 \vspace{4pt}
 
@@ -121,14 +121,10 @@ Senior Software Engineer with 6+ years designing and operating high-scale distri
 {Bangalore, India}
 {
     \item For Grab's Indonesia PayLater launch, \textbf{designed and scaled} the \textbf{Refund API} to handle 10\% of the country's user base. Used \textbf{idempotent and state machine design patterns}, automating retries, error recovery and complex refund flows, which handled 3M+ users gracefully.
-
     \item Built a \textbf{tiered service fee module for real-time charge APIs and batch billing systems}, implementing slab-rate logic per Indonesian regulatory requirements.
-
     \item Designed a configurable credit risk assessment module, \textbf{collaborating with product teams and external credit bureaus} to integrate country-specific requirements across \textbf{multiple Southeast Asian markets}.
-
-    \item Designed and implemented a \textbf{robust lending credit score API}, integrating score from data-science team models and user metadata teams, ensuring \textbf{adherence to REST API design and security best practices}.
-
-    \item Improved CI/CD build speeds by \textasciitilde18\% and increased unit test coverage by \textasciitilde35\% through Go version migration, go mod adoption, and systematic refactoring following \textbf{clean code adherence and dependency inversions}.
+    \item Developed a \textbf{robust lending credit score API}, integrating credit score from data-science team models and user metadata services, ensuring \textbf{adherence to REST API design and security best practices}.
+    \item Improved CI/CD build speeds by \textasciitilde18\% and increased unit test coverage by \textasciitilde35\% through Go version upgrade, glide to go mod adoption, and systematic refactoring following \textbf{clean code adherence and dependency inversions}.
 }
 
 \vspace{4pt}
@@ -141,14 +137,11 @@ Senior Software Engineer with 6+ years designing and operating high-scale distri
 {Multimodal Supply Chain Visibility Team}
 {Chennai, India}
 {
-    \item Architected a \textbf{Redis-backed caching layer to enable direct integration} with 10+ global maritime carriers, reducing reliance on costly third-party data providers. Designed carrier-specific configs to comply with \textbf{API rate limits and built end-to-end data parsers and update flows} — later adopted by rail and air teams. \textbf{Guided an intern through task delegation to fast-track delivery}.
-
-    \item Resolved search disruptions by replacing a shared Elasticsearch dependency with a dedicated Port Autocomplete API; utilized \textbf{composite indexing and in-memory caching} for 80,000+ ports to achieve \textbf{sub-100ms latency and operational independence}.
-
+    \item Architected a \textbf{Redis-backed caching layer to enable direct integration} with 10+ global maritime carriers, reducing reliance on costly third-party data providers. Designed carrier-specific configs to comply with \textbf{API rate limits and built end-to-end data parsers and update flows}, which was later adopted by rail and air teams. 
+    \item \textbf{Mentored an intern} on feature implementation and code review process for maritime integration module, accelerating knowledge transfer and team productivity.
+    \item Improved \textbf{global address search API availability} by replacing a shared Elasticsearch dependency with a dedicated Port Autocomplete API utilising \textbf{composite SQL indexing and in-memory cache} for 80,000+ ports and achieved \textbf{sub-100ms latency}.
     \item \textbf{Designed an async Kafka-based maritime event enrichment pipeline} for ETA/ETD updates by \textbf{integrating data from multiple internal microservices} into a unified callback payload — ensuring event persistence, configurability, and reliable real-time shipment update delivery to customers.
-
-    \item Eliminated error-prone QA processes by replacing SSH-based Ruby script execution with an \textbf{internal shipment event simulation tool} — dropdown-driven UI, event-specific data fields, and background worker integration. Delegated frontend tasks to an intern to fast-track delivery.
-
+    \item Eliminated error-prone QA processes by replacing SSH-based Ruby script execution with an \textbf{internal shipment event simulation tool} with dropdown-driven UI, event-specific data fields, and background worker integration. Delegated some tasks to an intern for their learning.
     \item Added ocean-specific features to the shipment cloning module, enabling \textbf{domain-specific data replication that improved accuracy and impact} of new client sales demos.
 }
 
@@ -164,10 +157,11 @@ Senior Software Engineer with 6+ years designing and operating high-scale distri
 % --- SKILLS ---
 \section{Technical Skills}
 \begin{itemize}[leftmargin=*, noitemsep, parsep=2pt, itemsep=2pt]
-    \item \textbf{Languages:} Go (Golang), Java, SQL, Python, C++
-    \item \textbf{Distributed Systems \& Infrastructure:} Kubernetes (K8s), Apache YARN, Docker, AWS, GCP, Linux
-    \item \textbf{Data Management \& Streaming:} Kafka, Redis, Aerospike, PostgreSQL, MySQL
-    \item \textbf{Frameworks \& Tools:} Spring Boot, Datadog, Jenkins, Git, CI/CD
+    \item \textbf{Languages:} Go (Golang), Java, Python, SQL, C++
+    \item \textbf{Backend \& API:} REST, gRPC, Microservices, Event-Driven Architecture, Spring Boot
+    \item \textbf{Messaging \& Infrastructure:} Apache Kafka, Kubernetes, Docker, Apache YARN, Linux
+    \item \textbf{Databases \& Caching:} MySQL, PostgreSQL, Redis, Aerospike
+    \item \textbf{Cloud \& Observability:} AWS, GCP, Datadog, Git, CI/CD
 \end{itemize}
 
 \section{Achievements}

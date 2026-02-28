@@ -18,3 +18,5 @@ cp "$TEX.pdf" "../$PDF_OUT"
 cp "$TEX.pdf" ~/Downloads/Resumes/"$PDF_OUT"
 
 echo "Done. PDF copied to ../ and ~/Downloads/Resumes/"
+
+pdftotext -layout sudipta_banik_software_engineer_resume.pdf
