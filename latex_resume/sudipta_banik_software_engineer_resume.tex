@@ -67,16 +67,16 @@
 \begin{center}
     {\fontsize{22pt}{24pt}\selectfont\bfseries SUDIPTA BANIK}\\[7pt]
     \small
-    +91 9051073567 \quad|\quad
+    (+91) 9051073567 \quad|\quad
     \href{mailto:sudiptabanik.dev@gmail.com}{sudiptabanik.dev@gmail.com} \quad|\quad
     \href{https://linkedin.com/in/sudipta-banik}{linkedin.com/in/sudipta-banik} \quad|\quad
     Bangalore, India
 \end{center}
-\vspace{4pt}
+\vspace{1pt}
 
 % --- SUMMARY ---
 \section{Summary}
-\noindent Software Engineer with 6.5 years of experience at Uber, Grab, and FourKites specializing in high-scale distributed systems and event-driven backends. Expert in Go, Java, and Kafka across job execution, fintech, and logistics domains. Holder of a Bachelor of Engineering in Electrical Engineering from Jadavpur University. Open to relocation.
+\noindent Software Engineer with almost 7 years of experience at Uber, Grab, and FourKites specializing in scalable, fault-tolerant distributed systems and event-driven backends. Proficient in Go, Java, SQL, Redis, and Kafka. Drove backend projects end to end, from design to production, across systems handling millions of transactions and jobs daily, spanning regulated fintech, distributed compute, and global logistics domains. Open to relocation.
 
 % --- EXPERIENCE ---
 \section{Work Experience}
@@ -89,10 +89,11 @@
 {Batch Compute Team}
 {Bangalore, India}
 {
-    \item Designed and implemented \textbf{automated fault isolation} for Apache distributed job execution system using \textbf{circuit breakers and adaptive retries, reducing incident Mean Time To Resolve (MTTR) to under 60 seconds} and preventing cascading failures across downstream services.
-    \item Built a dynamic workload admission control service to protect high-priority jobs during system outages, leveraging Kubernetes ConfigMaps for real-time policy propagation and blocking \textasciitilde7\% of total \textasciitilde400K+ concurrent job volume.
-    \item Improved job scheduling correctness in a distributed execution engine by centralizing ID generation and enforcing submission-time ordering, \textbf{eliminating allocation delays of up to 20 seconds} for ML and data workloads.
-    \item Developed a ZooKeeper-backed federation controller for the Apache YARN Router, enabling quick cluster isolation and re-attachment to \textbf{maintain system Service Level Agreement (SLA)} during system outages.
+    \item \textbf{Developed an automated resilience mechanism} for internal Apache YARN cluster federation using circuit breakers and adaptive retries, ensuring \textbf{system stability} and service recovery in \textbf{under 60 seconds} during downstream failures.
+    \item \textbf{Implemented a tiered workload protection component in Kubernetes} to safeguard \textbf{business-critical processes}, using real-time configMap driven policy enforcement to manage system outages and guarantee resources for \textbf{high priority operations}.
+    % \item \textbf{Optimized data retrieval efficiency} by migrating to \textbf{cursor-based pagination} for internal workload tasks list page, eliminating expensive count operations and achieving \textbf{consistent query latency} in Cassandra regardless of dataset depth.
+    \item \textbf{Improved internal data platform efficiency} by re-engineering job submission logic, \textbf{eliminating close to 20-second scheduling delays} for batch data processing workloads.
+    \item \textbf{Built a centralized failover controller} to maintain continuous \textbf{platform availability}, enabling rapid apache yarn cluster isolation to prevent service interruptions during large-scale network outages.
     \item Enhanced Uber's internal Kubernetes batch job observability dashboard with workload-type and job-ID search, and a resource-usage heatmap - \textbf{Improving on-call debuggability} and reducing time-to-insight during incidents.
 }
 
@@ -102,7 +103,7 @@
 
 \roleblock
 {Senior Software Engineer}
-{Aug 2023 -- Oct 2024}
+{Oct 2023 -- Oct 2024}
 {Lending Core Team, Fintech}
 {Bangalore, India}
 {
@@ -110,14 +111,14 @@
     \item Reduced loan creation API p95 latency by almost 32\% via \textbf{MySQL batch inserts} for instalment. The reduction in network round-trips and lock acquisitions \textbf{improved throughput during high-concurrency database writes}. 
     \item Developed a \textbf{sub-second data aggregator API} integrating 5+ internal APIs for banking partners; with \textbf{partial response fallback for high availability}.
     \item \textbf{Improved the internal Kafka consumer framework reliability} via graceful shutdown re-queuing, reducing message loss to near zero across financial transaction pipelines.
-    % \item \textbf{Mentored 2 new engineers through onboarding}, maintaining team velocity during hiring season.
+    \item \textbf{Mentored 2 new engineers through onboarding}, maintaining team velocity during hiring season.
 }
 \vspace{4pt}
 
 \roleblock
 {Software Engineer}
-{Oct 2021 -- Aug 2023}
-{PayLater Team, Fintech}
+{Oct 2021 -- Sep 2023}
+{Lending PayLater Team, Fintech}
 {Bangalore, India}
 {
     \item For Grab's Indonesia PayLater launch, \textbf{designed and scaled} the \textbf{Refund API} to handle 10\% of the country's user base. Used \textbf{idempotent and state machine design patterns}, automating retries, error recovery and complex refund flows, which handled 3M+ users gracefully.
@@ -149,19 +150,22 @@
 
 % --- EDUCATION ---
 \section{Education}
-{\large\textbf{Jadavpur University}} \hfill Aug 2015 -- May 2019 \\
-\textit{Bachelor of Engineering in Electrical Engineering} \hfill Kolkata, India \\
-\vspace{2pt}
-\textit{Relevant Coursework:} C++, Data Structures \& Algorithms, Computer Networks, Signals \& Systems, Engineering Mathematics
+{\Large\textbf{Jadavpur University}} \hfill Aug 2015 -- Aug 2019 \\
+\textit{\textbf{Bachelor of Engineering} in Electrical Engineering} \hfill Kolkata, India \\ 
+\textbf{Result:} CGPA: 7.91/10
+\vspace{1mm} \\
+\small\textbf{Relevant Coursework:} Principles of Software Engineering, Communication Engineering and Computer Networks, Sequential Systems and Microprocessors, Computer Fundamentals, Basics of Numerical Methods and Programming, Computer Programming Laboratory, Introduction to Statistical and Probabilistic Methods, Engineering Mathematics.
+
+\vspace{4mm}
 
 % --- SKILLS ---
 \section{Technical Skills}
 \begin{itemize}[leftmargin=*, noitemsep, parsep=2pt, itemsep=2pt]
-    \item \textbf{Languages:} Go (Golang), Java, Python, SQL, C++
+    \item \textbf{Languages:} Golang, Java, Python, SQL, C++
     \item \textbf{Backend \& API:} REST, gRPC, Microservices, Event-Driven Architecture, Spring Boot
     \item \textbf{Messaging \& Infrastructure:} Apache Kafka, Kubernetes, Docker, Apache YARN, Linux
-    \item \textbf{Databases \& Caching:} MySQL, PostgreSQL, Redis, Aerospike
-    \item \textbf{Cloud \& Observability:} AWS, GCP, Datadog, Git, CI/CD
+    \item \textbf{Databases \& Caching:} MySQL, PostgreSQL, Cassandra, Redis, Aerospike
+    \item \textbf{Cloud \& Observability:} AWS, GCP, Datadog, Git
 \end{itemize}
 
 \section{Achievements}
