@@ -88,10 +88,10 @@ Programming Laboratory, Introduction to Statistical and Probabilistic Methods, E
 
 
 TECHNICAL SKILLS
-• Languages: Golang, Java, Python, SQL, C++
-• Backend & API: REST, gRPC, Microservices, Event-Driven Architecture, Spring Boot
+• Languages: Golang, Java, TypeScript, JavaScript, SQL, C++
+• Backend & API: REST, gRPC, Nodejs, Microservices, Event-Driven Architecture, Domain Driven Design, Spring Boot
 • Messaging & Infrastructure: Apache Kafka, Kubernetes, Docker, Apache YARN, Linux
-• Databases & Caching: MySQL, PostgreSQL, Cassandra, Redis, Aerospike
+• Databases & Caching: MySQL, PostgreSQL, Cassandra, Redis, MongoDB
 • Cloud & Observability: AWS, GCP, Datadog, Git
 
 ACHIEVEMENTS
