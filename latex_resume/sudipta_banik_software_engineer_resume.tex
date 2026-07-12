@@ -31,7 +31,6 @@
 \titlespacing{\section}{0pt}{12pt}{6pt}
 
 % --- Company Header ---
-% FIXED: Improved spacing and formatting
 \newcommand{\companyheader}[1]{%
     \vspace{3pt}%
     {\Large\bfseries #1}%
@@ -39,8 +38,6 @@
 }
 
 % --- Role Block ---
-% FIXED: Added % at line ends to prevent unwanted spaces
-% FIXED: Added \raggedrightskip to control spacing better
 \newcommand{\roleblock}[5]{%
     \vspace{2pt}%
     \noindent%
@@ -51,10 +48,10 @@
         noitemsep,%
         topsep=1pt,%
         label={\small\textbullet},%
-        itemsep=0pt%       % FIXED: Ensure no extra space between items
+        itemsep=0pt%       
     ]%
     \RaggedRight%
-    \def\baselinestretch{1.0}%  % FIXED: Consistent line spacing within bullets
+    \def\baselinestretch{1.0}%  
         #5%
     \end{itemize}%
     \vspace{1pt}%
@@ -76,7 +73,7 @@
 
 % --- SUMMARY ---
 \section{Summary}
-\noindent Software Engineer with almost 7 years of experience at Uber, Grab, and FourKites specializing in scalable, fault-tolerant distributed systems and event-driven backends. Proficient in Go, Java, SQL, Redis, and Kafka. Drove backend projects end to end, from design to production, across systems handling millions of transactions and jobs daily, spanning regulated fintech, distributed compute, and global logistics domains. Open to relocation.
+\noindent Software Engineer with 7 years of experience at Uber, Grab, and FourKites specializing in scalable, fault-tolerant distributed systems and event-driven backends. Proficient in Go, Java, SQL, Redis, and Kafka. Drove backend projects end to end, from design to production, across systems handling millions of transactions or events daily, spanning fintech, distributed compute, and global logistics domains. Open to relocation.
 
 % --- EXPERIENCE ---
 \section{Work Experience}
@@ -89,15 +86,16 @@
 {Batch Compute Team}
 {Bangalore, India}
 {
-    \item \textbf{Developed an automated resilience mechanism} for internal Apache YARN cluster federation using circuit breakers and adaptive retries, ensuring \textbf{system stability} and service recovery in \textbf{under 60 seconds} during downstream failures.
+    \item \textbf{Led end-to-end decomission of the zonal Cassandra DBs} backing the batch compute job history pipeline, migrating it to the \textbf{regional DB, with zero downtime} across three independent services, eliminating infra cost.
+    \item Developed a low-latency admin CLI backed by \textbf{ZooKeeper to dynamically decouple clusters from the YARN federation router}, reducing mean time to resolution during system outages.
     \item \textbf{Implemented a tiered workload protection component in Kubernetes} to safeguard \textbf{business-critical processes}, using real-time configMap driven policy enforcement to manage system outages and guarantee resources for \textbf{high priority operations}.
-    % \item \textbf{Optimized data retrieval efficiency} by migrating to \textbf{cursor-based pagination} for internal workload tasks list page, eliminating expensive count operations and achieving \textbf{consistent query latency} in Cassandra regardless of dataset depth.
-    \item \textbf{Improved internal data platform efficiency} by re-engineering job submission logic, \textbf{eliminating close to 20-second scheduling delays} for batch data processing workloads.
-    \item \textbf{Built a centralized failover controller} to maintain continuous \textbf{platform availability}, enabling rapid apache yarn cluster isolation to prevent service interruptions during large-scale network outages.
-    \item Enhanced Uber's internal Kubernetes batch job observability dashboard with workload-type and job-ID search, and a resource-usage heatmap - \textbf{Improving on-call debuggability} and reducing time-to-insight during incidents.
+    \item \textbf{Optimized internal k8s task list page load time} by moving to \textbf{cursor-based pagination}, eliminating inefficient count based pagination.
+    \item \textbf{Improved internal data platform efficiency} by tweaking the job scheduling logic, \textbf{eliminating close to 20-second scheduling delays} for batch data processing workloads.
+    \item \textbf{Created Cadence Workflow based E2E testing framework for Apache YARN} and linked it with CD pipeline to have \textbf{better deployment safety and ease of release}.
+    \item \textbf{Improved oncall observability} by enhancing the internal Kubernetes batch job observability dashboard with workload search, queue metric navigation, resource-usage heatmap etc.
 }
 
-\vspace{4pt}
+\vspace{2pt}
 
 \companyheader{GRAB}
 
@@ -113,7 +111,7 @@
     \item \textbf{Improved the internal Kafka consumer framework reliability} via graceful shutdown re-queuing, reducing message loss to near zero across financial transaction pipelines.
     \item \textbf{Mentored 2 new engineers through onboarding}, maintaining team velocity during hiring season.
 }
-\vspace{4pt}
+\vspace{2pt}
 
 \roleblock
 {Software Engineer}
@@ -128,7 +126,7 @@
     \item Improved CI/CD build speeds by \textasciitilde18\% and increased unit test coverage by \textasciitilde35\% through Go version upgrade, glide to go mod adoption, and systematic refactoring following \textbf{clean code adherence and dependency inversions}.
 }
 
-\vspace{4pt}
+\vspace{2pt}
 
 \companyheader{FOURKITES INC.}
 
@@ -153,16 +151,16 @@
 {\Large\textbf{Jadavpur University}} \hfill Aug 2015 -- Aug 2019 \\
 \textit{\textbf{Bachelor of Engineering} in Electrical Engineering} \hfill Kolkata, India \\ 
 \textbf{Result:} CGPA: 7.91/10
-\vspace{1mm} \\
-\small\textbf{Relevant Coursework:} Principles of Software Engineering, Communication Engineering and Computer Networks, Sequential Systems and Microprocessors, Computer Fundamentals, Basics of Numerical Methods and Programming, Computer Programming Laboratory, Introduction to Statistical and Probabilistic Methods, Engineering Mathematics.
+% \vspace{1mm} \\
+%\small\textbf{Relevant Coursework:} Principles of Software Engineering, Communication Engineering and Computer Networks, Sequential Systems and Microprocessors, Computer Fundamentals, Basics of Numerical Methods and Programming, Computer Programming Laboratory, Introduction to Statistical and Probabilistic Methods, Engineering Mathematics.
 
-\vspace{4mm}
+\vspace{4pt}
 
 % --- SKILLS ---
 \section{Technical Skills}
 \begin{itemize}[leftmargin=*, noitemsep, parsep=2pt, itemsep=2pt]
-    \item \textbf{Languages:} Golang, Java, TypeScript, JavaScript, SQL, C++
-    \item \textbf{Backend \& API:} REST, gRPC, Nodejs, Microservices, Event-Driven Architecture, Domain Driven Design, Spring Boot
+    \item \textbf{Languages:} Golang, Java, C++, TypeScript, SQL
+    \item \textbf{Backend \& API:} REST, gRPC, Microservices, Event-Driven Architecture, Domain Driven Design, Spring Boot
     \item \textbf{Messaging \& Infrastructure:} Apache Kafka, Kubernetes, Docker, Apache YARN, Linux, Terraform
     \item \textbf{Databases \& Caching:} MySQL, PostgreSQL, Cassandra, Redis, MongoDB
     \item \textbf{Cloud \& Observability:} AWS, GCP, Datadog, Git
