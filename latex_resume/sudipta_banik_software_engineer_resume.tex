@@ -1,6 +1,7 @@
 \documentclass[11pt,a4paper]{article}
 
 % --- Packages ---
+\usepackage{cmap} % Improves ATS character recognition
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[default]{lato}
@@ -8,6 +9,7 @@
 \usepackage{enumitem}
 \usepackage{titlesec}
 \usepackage{xcolor}
+\usepackage[none]{hyphenat} % Prevents ATS from splitting words at line breaks
 \definecolor{rulegray}{gray}{0.6}
 
 \usepackage{microtype}
@@ -57,7 +59,6 @@
     \vspace{1pt}%
 }
 
-
 \begin{document}
 
 % --- HEADER ---
@@ -66,7 +67,7 @@
     \small
     (+91) 9051073567 \quad|\quad
     \href{mailto:sudiptabanik.dev@gmail.com}{sudiptabanik.dev@gmail.com} \quad|\quad
-    \href{https://linkedin.com/in/sudipta-banik}{linkedin.com/in/sudipta-banik} \quad|\quad
+    \href{https://www.linkedin.com/in/sudipta-banik}{linkedin.com/in/sudipta-banik} \quad|\quad
     Bangalore, India
 \end{center}
 \vspace{1pt}
@@ -82,17 +83,16 @@
 
 \roleblock
 {Software Engineer II}
-{Oct 2024 -- Present}
-{Batch Compute Team}
+{Oct 2024 - Present}
+{Mobility \& Batch Compute Teams}
 {Bangalore, India}
 {
-    \item \textbf{Led end-to-end decomission of the zonal Cassandra DBs} backing the batch compute job history pipeline, migrating it to the \textbf{regional DB, with zero downtime} across three independent services, eliminating infra cost.
-    \item Developed a low-latency admin CLI backed by \textbf{ZooKeeper to dynamically decouple clusters from the YARN federation router}, reducing mean time to resolution during system outages.
-    \item \textbf{Implemented a tiered workload protection component in Kubernetes} to safeguard \textbf{business-critical processes}, using real-time configMap driven policy enforcement to manage system outages and guarantee resources for \textbf{high priority operations}.
-    \item \textbf{Optimized internal k8s task list page load time} by moving to \textbf{cursor-based pagination}, eliminating inefficient count based pagination.
-    \item \textbf{Improved internal data platform efficiency} by tweaking the job scheduling logic, \textbf{eliminating close to 20-second scheduling delays} for batch data processing workloads.
-    \item \textbf{Created Cadence Workflow based E2E testing framework for Apache YARN} and linked it with CD pipeline to have \textbf{better deployment safety and ease of release}.
-    \item \textbf{Improved oncall observability} by enhancing the internal Kubernetes batch job observability dashboard with workload search, queue metric navigation, resource-usage heatmap etc.
+    \item \textbf{Architected the Uber Moto rider preferences feature}, modifying core trip-lifecycle services to surface the data to drivers pre-trip. Drove cross-team alignment, development and deployed changes handling nearly \textbf{80 QPS} during the initial regional launch.
+    \item \textbf{Led a zero-downtime migration} from zonal Cassandra to regional DBs using \textbf{dual-writes and shadow validation}, eliminating legacy infrastructure costs.
+    \item \textbf{Enhanced YARN router fault tolerance} by implementing strict router-to-cluster timeouts and a ZooKeeper-backed router CLI to \textbf{dynamically isolate degraded clusters}, preventing cascading failures.
+    \item \textbf{Implemented a tiered workload protection layer in batch Kube federator} to safeguard \textbf{business-critical jobs}, using real-time configMap driven policy enforcement to manage system outages and guarantee resources for \textbf{high priority operations}.
+    \item \textbf{Automated deployment safety for Apache YARN} by building a Cadence-backed E2E testing framework and \textbf{integrating it directly into the continuous delivery pipeline}.
+    \item \textbf{Optimized internal Kubernetes management platforms}, improving page load times via cursor-based pagination and enhancing batch job observability with queue metric navigation and resource-usage heatmaps.
 }
 
 \vspace{2pt}
@@ -101,7 +101,7 @@
 
 \roleblock
 {Senior Software Engineer}
-{Oct 2023 -- Oct 2024}
+{Oct 2023 - Oct 2024}
 {Lending Core Team, Fintech}
 {Bangalore, India}
 {
@@ -109,13 +109,13 @@
     \item Reduced loan creation API p95 latency by almost 32\% via \textbf{MySQL batch inserts} for instalment. The reduction in network round-trips and lock acquisitions \textbf{improved throughput during high-concurrency database writes}. 
     \item Developed a \textbf{sub-second data aggregator API} integrating 5+ internal APIs for banking partners; with \textbf{partial response fallback for high availability}.
     \item \textbf{Improved the internal Kafka consumer framework reliability} via graceful shutdown re-queuing, reducing message loss to near zero across financial transaction pipelines.
-    \item \textbf{Mentored 2 new engineers through onboarding}, maintaining team velocity during hiring season.
+    \item \textbf{Mentored 2 new engineers}, guiding them through internal systems, code reviews, and initial deliverables to maintain team velocity and quality.
 }
 \vspace{2pt}
 
 \roleblock
 {Software Engineer}
-{Oct 2021 -- Sep 2023}
+{Oct 2021 - Sep 2023}
 {Lending PayLater Team, Fintech}
 {Bangalore, India}
 {
@@ -132,15 +132,14 @@
 
 \roleblock
 {Software Engineer}
-{Jun 2019 -- Oct 2021}
+{Jun 2019 - Oct 2021}
 {Multimodal Supply Chain Visibility Team}
 {Chennai, India}
 {
-    \item Architected a \textbf{Redis-backed caching layer to enable direct integration} with 10+ global maritime carriers, reducing reliance on costly third-party data providers. Designed carrier-specific configs to comply with \textbf{API rate limits and built end-to-end data parsers and update flows}, which was later adopted by rail and air teams. 
-    \item \textbf{Mentored an intern} on feature implementation and code review process for maritime integration module, accelerating knowledge transfer and team productivity.
+    \item Architected a \textbf{Redis-backed caching layer to enable direct integration} with 10+ global maritime carriers, reducing reliance on costly third-party data providers. Designed carrier-specific configs to comply with \textbf{API rate limits and built end-to-end data parsers and update flows}.
     \item Improved \textbf{global address search API availability} by replacing a shared Elasticsearch dependency with a dedicated Port Autocomplete API utilising \textbf{composite SQL indexing and in-memory cache} for 80,000+ ports and achieved \textbf{sub-100ms latency}.
-    \item \textbf{Designed an async Kafka-based maritime event enrichment pipeline} for ETA/ETD updates by \textbf{integrating data from multiple internal microservices} into a unified callback payload — ensuring event persistence, configurability, and reliable real-time shipment update delivery to customers.
-    \item Eliminated error-prone QA processes by replacing SSH-based Ruby script execution with an \textbf{internal shipment event simulation tool} with dropdown-driven UI, event-specific data fields, and background worker integration. Delegated some tasks to an intern for their learning.
+    \item \textbf{Designed an async Kafka-based maritime event enrichment pipeline} for ETA/ETD updates by \textbf{integrating data from multiple internal microservices} into a unified callback payload ensuring event persistence, configurability, and reliable real-time shipment update delivery to customers.
+    \item Eliminated error-prone QA processes by replacing SSH-based Ruby script execution with an \textbf{internal shipment event simulation tool} with dropdown-driven UI, event-specific data fields, and background worker integration.
     \item Added ocean-specific features to the shipment cloning module, enabling \textbf{domain-specific data replication that improved accuracy and impact} of new client sales demos.
 }
 
@@ -175,7 +174,7 @@
 \section{Projects}
 
 \noindent\textbf{Travelling Thief Problem} \hfill \textit{2018} \\
-Explored metaheuristic approaches to approximate solutions for the Travelling Thief Problem, a composite NP-hard problem coupling TSP and 0/1 knapsack selection implemented in MATLAB, under the guidance of professor at Indian Statistical Institute, Kolkata.
+Explored metaheuristic approaches to approximate solutions for the Travelling Thief Problem, a composite NP-hard problem coupling TSP and 0/1 knapsack selection, under the guidance of a professor at Indian Statistical Institute, Kolkata.
 \hfill \href{https://github.com/baniksudipta/ttp_project}{\textit{Source: github.com/baniksudipta/ttp\_project}}
 
 % --- LANGUAGES ---
