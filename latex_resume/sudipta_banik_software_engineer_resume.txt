@@ -13,22 +13,19 @@ WORK EXPERIENCE
 UBER
 Software Engineer II                                                                              Oct 2024 – Present
 Batch Compute Team                                                                                  Bangalore, India
-• Led end-to-end decomission of the zonal Cassandra DBs backing the batch compute job history pipeline,
-  migrating it to the regional DB, with zero downtime across three independent services, eliminating infra
-  cost.
-• Developed a low-latency admin CLI backed by ZooKeeper to dynamically decouple clusters from the YARN
-  federation router, reducing mean time to resolution during system outages.
-• Implemented a tiered workload protection component in Kubernetes to safeguard business-critical
-  processes, using real-time conﬁgMap driven policy enforcement to manage system outages and guarantee
-  resources for high priority operations.
-• Optimized internal k8s task list page load time by moving to cursor-based pagination, eliminating ineﬃ-
-  cient count based pagination.
-• Improved internal data platform eﬃciency by tweaking the job scheduling logic, eliminating close to 20-
-  second scheduling delays for batch data processing workloads.
-• Created Cadence Workﬂow based E2E testing framework for Apache YARN and linked it with CD pipeline
-  to have better deployment safety and ease of release.
-• Improved oncall observability by enhancing the internal Kubernetes batch job observability dashboard with
-  workload search, queue metric navigation, resource-usage heatmap etc.
+
+
+Team: Batch Compute Platform (This team is responsible for maintaining the infra that helps run the Batch data processing job like Spark, MapReduce, Apache Flink).
+My core responsibilities included
+• Led end-to-end decomission of the zonal Cassandra DBs backing the batch compute job history pipeline, migrating it to the regional DB, with zero downtime across three independent services, eliminating infra cost.
+• Developed a low-latency admin CLI backed by ZooKeeper to dynamically decouple clusters from the YARN federation router, reducing mean time to resolution during system outages.
+• Implemented a tiered workload protection component in Kubernetes to safeguard business-critical processes, using real-time conﬁgMap driven policy enforcement to manage system outages and guarantee resources for high priority operations.
+• Optimized internal k8s task list page load time by moving to cursor-based pagination, eliminating ineﬃcient count based pagination.
+• Improved internal data platform eﬃciency by tweaking the job scheduling logic, eliminating close to 20-second scheduling delays for batch data processing workloads.
+• Created Cadence Workﬂow based E2E testing framework for Apache YARN and linked it with CD pipeline to have better deployment safety and ease of release.
+• Improved oncall observability by enhancing the internal Kubernetes batch job observability dashboard with workload search, queue metric navigation, resource-usage heatmap etc.
+
+
 GRAB
 Senior Software Engineer                                                                      Oct 2023 – Oct 2024
 Lending Core Team, Fintech                                                                         Bangalore, India
@@ -52,7 +49,7 @@ Lending PayLater Team, Fintech                                                  
   rate logic per Indonesian regulatory requirements.
 • Designed a conﬁgurable credit risk assessment module, collaborating with product teams and external
   credit bureaus to integrate country-speciﬁc requirements across multiple Southeast Asian markets.
-• Developed a robust lending credit score API, integrating credit score from data-science team models and
+• Developed a robust lending credit score API, integrating credit score from data-science team models and
   user metadata services, ensuring adherence to REST API design and security best practices.
 • Improved CI/CD build speeds by ~18% and increased unit test coverage by ~35% through Go version
   upgrade, glide to go mod adoption, and systematic refactoring following clean code adherence and

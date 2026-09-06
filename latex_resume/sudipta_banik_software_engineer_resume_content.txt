@@ -20,11 +20,16 @@ Bangalore, India
 
 Team: Batch Compute Team
 Major Contributions: 
-• Designed and implemented automated fault isolation for Apache distributed job execution system using circuit breakers and adaptive retries, reducing incident Mean Time To Resolve (MTTR) to under 60 seconds and preventing cascading failures across downstream services.
-• Built a dynamic workload admission control service to protect high-priority jobs during system stress, leveraging Kubernetes ConﬁgMaps for real-time policy propagation — blocking ~7% of total concurrent job volume.
-• Improved job scheduling correctness in a distributed execution engine by centralizing ID generation and enforcing submission-time ordering, eliminating allocation delays of up to 20 seconds for ML and data workloads.
-• Developed a ZooKeeper-backed federation controller for the Yet Another Resource Negotiator (YARN) Router, enabling quick cluster isolation and re-attachment to maintain system Service Level Agreement (SLA) during system outages.
-• Enhanced Uber’s internal Kubernetes batch job observability dashboard with workload-type and job-ID search, and a resource-usage heatmap - Improving on-call debuggability and reducing time-to-insight during incidents.
+
+- Led end-to-end decomission of the zonal Cassandra DBs backing the batch compute job history pipeline, migrating it to the regional DB, with zero downtime across three independent services, eliminating infra cost.
+- Developed a low-latency admin CLI backed by ZooKeeper to dynamically decouple clusters from the YARN federation router, reducing mean time to resolution during system outages.
+- Implemented a tiered workload protection component in Kubernetes to safeguard business-critical processes, using real-time configMap driven policy enforcement to manage system outages and guarantee resources for high priority operations.
+- Optimized internal k8s task list page load time by moving to cursor-based pagination, eliminating inefficient count based pagination.
+- Improved internal data platform efficiency by tweaking the job scheduling logic, eliminating close to 20-second scheduling delays for batch data processing workloads.
+- Created Cadence Workflow based E2E testing framework for Apache YARN and linked it with CD pipeline to have better deployment safety and ease of release.
+- Improved oncall observability by enhancing the internal Kubernetes batch job observability dashboard with workload search, queue metric navigation, resource-usage heatmap etc.
+
+
 
 GRAB
 Senior Software Engineer
